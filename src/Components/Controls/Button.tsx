@@ -9,13 +9,13 @@ interface IButtonProps {
 	/** The current tab of the template choosing process */
 	onPress(): void;
 	/** The button text */
-	text: string;
+	text?: string;
 }
 
 /**
  * Component to render a Button
  */
-const Button: SFC<IButtonProps> = (props: IButtonProps) => (
+const Button: SFC<IButtonProps> = (props) => (
 	<TouchableOpacity onPress={props.onPress} style={styles.button}>
 		<Text>{props.text || props.children}</Text>
 	</TouchableOpacity>

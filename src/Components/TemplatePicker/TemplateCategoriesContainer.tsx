@@ -12,17 +12,24 @@ import Category from "./Category";
 interface ITemplateCategoriesContainerProps {
 	/** The currently selected category */
 	currentCategory?: Categories;
+	/** On press callback to be fired whenever the option button is pressed */
+	onPress(category: Categories): void;
 }
 
 /**
  * Component to render a Template Categories Container
  */
-const TemplateCategoriesContainer: SFC<ITemplateCategoriesContainerProps> = (props: ITemplateCategoriesContainerProps) => (
+const TemplateCategoriesContainer: SFC<ITemplateCategoriesContainerProps> = (props) => (
 	<View style={styles.categoriesContainer}>
 		<ScrollView horizontal={true}>
 			{
-				Object.keys(Categories).map((category) => (
-					<Category key={Categories[category]} category={Categories[category]} selected={Categories[category] === props.currentCategory}/>
+				Object.keys(Categories).map(category => (
+					<Category
+						key={Categories[category]}
+						category={Categories[category]}
+						onPress={props.onPress}
+						selected={Categories[category] === props.currentCategory}
+					/>
 				))
 			}
 		</ScrollView>
@@ -34,6 +41,7 @@ const TemplateCategoriesContainer: SFC<ITemplateCategoriesContainerProps> = (pro
  */
 const styles = StyleSheet.create({
 	categoriesContainer: {
+		marginBottom: 20,
 		width: "100%"
 	}
 });

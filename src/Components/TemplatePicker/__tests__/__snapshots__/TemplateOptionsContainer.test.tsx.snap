@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Template Options Container component’s snapshot renders as expected 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#000000",
+      "borderWidth": 0.5,
+      "height": 175,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#18A0FB",
+        "borderBottomLeftRadius": 30,
+        "borderBottomRightRadius": 30,
+        "borderTopLeftRadius": 6,
+        "borderTopRightRadius": 6,
+        "flexDirection": "row",
+        "height": 70,
+        "justifyContent": "center",
+        "marginHorizontal": 20,
+        "opacity": 1,
+        "padding": 5,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Export to camera roll
+    </Text>
+  </View>
+</View>
+`;

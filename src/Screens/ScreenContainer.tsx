@@ -7,7 +7,7 @@ import * as C from "../Global/Colours";
 /**
  * Component to render the screen container
  */
-const ScreenContainer: SFC = (props: Component) => (
+const ScreenContainer: SFC<Component> = (props) => (
 	<ScrollView
 		alwaysBounceVertical={ false }
 		indicatorStyle="black"
@@ -24,7 +24,7 @@ const ScreenContainer: SFC = (props: Component) => (
 const styles = StyleSheet.create({
 	screen: {
 		...StyleSheet.absoluteFillObject,
-		backgroundColor: C.bgSecondary,
+		backgroundColor: C.background,
 		paddingTop: 50,
 		paddingHorizontal: 40
 	}

@@ -1,20 +1,49 @@
 import React, { SFC } from "react";
 import { StyleSheet, View } from "react-native";
 
+import Categories from "./Categories";
+import Shapes from "./Shapes";
+
+import ColourPicker from "./OptionViews/ColourPicker";
+import ExportsButton from "./ExportsButton";
+import ShapePicker from "./OptionViews/ShapePicker";
+import TextPicker from "./OptionViews/TextPicker";
+
 
 /**
- * Interface for the Tab Counter props
+ * Interface for the Template Options Container props
  */
 interface ITemplateOptionsContainerProps {
-
+	currentCategory?: Categories;
+	currentOption?: Shapes;
 }
 
 /**
  * Component to render the Template Options Container
  */
-const TemplateOptionsContainer: SFC<ITemplateOptionsContainerProps> = (props: ITemplateOptionsContainerProps) => (
-	<View style={styles.templateOptionsContainer}/>
-);
+const TemplateOptionsContainer: SFC<ITemplateOptionsContainerProps> = (props) => {
+	let options: JSX.Element | null = null;
+
+	switch(props.currentCategory) {
+		case Categories.Colour:
+				options = <ColourPicker currentOption={props.currentOption as any}/>;
+			break;
+		case Categories.Shape:
+			options = <ShapePicker currentOption={props.currentOption as Shapes}/>;
+			break;
+		case Categories.Text:
+				options = <TextPicker currentOption={props.currentOption as any}/>;
+			break;
+	}
+
+	return (
+		<View style={styles.templateOptionsContainer}>
+			{options}
+
+			<ExportsButton/>
+		</View>
+	);
+};
 
 /**
  * Styles for the Template Options Container

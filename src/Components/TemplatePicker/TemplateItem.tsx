@@ -1,13 +1,15 @@
 import React, { SFC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+import Shapes from "./Shapes";
+
 
 /**
  * Interface for the Template Item props
  */
 interface ITemplateItemProps {
-	/** The shape of the item. This is the base property as all instances must have at least this */
-	shape: "capsule" | "circle" | "square"
+	/** The shape of the item */
+	shape?: Shapes;
 	/** The colour of the item */
 	colour?: string;
 	/** The text of the sticker */
@@ -17,8 +19,8 @@ interface ITemplateItemProps {
 /**
  * Component to render a Template Item
  */
-const TemplateItem: SFC<ITemplateItemProps> = (props: ITemplateItemProps) => (
-	<View style={[{ backgroundColor: props.colour || "yellow" }, styles.item]}>
+const TemplateItem: SFC<ITemplateItemProps> = (props) => (
+	<View style={[{ backgroundColor: props.colour || "green" }, styles.item]}>
 		<Text>{props.text}</Text>
 	</View>
 );
