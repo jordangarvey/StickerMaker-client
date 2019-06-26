@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
 import Categories from "./Categories";
@@ -19,7 +19,7 @@ interface ITemplateCategoriesContainerProps {
 /**
  * Component to render a Template Categories Container
  */
-const TemplateCategoriesContainer: SFC<ITemplateCategoriesContainerProps> = (props) => (
+const TemplateCategoriesContainer: FC<ITemplateCategoriesContainerProps> = (props) => (
 	<View style={styles.categoriesContainer}>
 		<ScrollView horizontal={true}>
 			{

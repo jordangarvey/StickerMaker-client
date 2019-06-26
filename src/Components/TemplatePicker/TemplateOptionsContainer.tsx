@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, View } from "react-native";
 
 import Categories from "./Categories";
@@ -21,7 +21,7 @@ interface ITemplateOptionsContainerProps {
 /**
  * Component to render the Template Options Container
  */
-const TemplateOptionsContainer: SFC<ITemplateOptionsContainerProps> = (props) => {
+const TemplateOptionsContainer: FC<ITemplateOptionsContainerProps> = (props) => {
 	let options: JSX.Element | null = null;
 
 	switch(props.currentCategory) {

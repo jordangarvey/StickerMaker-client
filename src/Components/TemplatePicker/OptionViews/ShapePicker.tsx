@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 import Shapes from "../Shapes";
@@ -15,7 +15,7 @@ interface IShapePickerProps {
 /**
  * Component to render the Shape Picker
  */
-const ShapePicker: SFC<IShapePickerProps> = (props) => (
+const ShapePicker: FC<IShapePickerProps> = (props) => (
 	<View><Text>Shape picker</Text></View>
 );
 

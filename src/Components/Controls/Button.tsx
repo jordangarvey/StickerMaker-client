@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
 
@@ -15,7 +15,7 @@ interface IButtonProps {
 /**
  * Component to render a Button
  */
-const Button: SFC<IButtonProps> = (props) => (
+const Button: FC<IButtonProps> = (props) => (
 	<TouchableOpacity onPress={props.onPress} style={styles.button}>
 		<Text>{props.text || props.children}</Text>
 	</TouchableOpacity>

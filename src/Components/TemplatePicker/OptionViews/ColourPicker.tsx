@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 import Shapes from "../Shapes";
@@ -15,7 +15,7 @@ interface IColourPickerProps {
 /**
  * Component to render the Colour Picker
  */
-const ColourPicker: SFC<IColourPickerProps> = (props) => (
+const ColourPicker: FC<IColourPickerProps> = (props) => (
 	<View><Text>Colour picker</Text></View>
 );
 

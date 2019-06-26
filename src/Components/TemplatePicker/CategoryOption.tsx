@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import Categories from "./Categories";
@@ -24,7 +24,7 @@ interface ICategoryOptionProps {
 /**
  * Component to render a Category Option button
  */
-const CategoryOption: SFC<ICategoryOptionProps> = (props) => {
+const CategoryOption: FC<ICategoryOptionProps> = (props) => {
 	return (
 		<View
 			onPress={props.onPress.bind(null, props.option)}

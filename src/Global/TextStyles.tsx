@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleProp, StyleSheet, Text, TextStyle } from "react-native";
 
 import * as C from "./Colours";
@@ -16,7 +16,7 @@ interface ITextStylesProps {
 /**
  * Global component for the text body
  */
-export const TextBody: SFC<ITextStylesProps> = (props) => (
+export const TextBody: FC<ITextStylesProps> = (props) => (
 	<Text onPress={ props.onPress } style={ [Styles.textBodyStyles, props.style] }>{ props.children }</Text>
 );
 

@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 import Shapes from "../Shapes";
@@ -15,7 +15,7 @@ interface ITextPickerProps {
 /**
  * Component to render the Text Picker
  */
-const TextPicker: SFC<ITextPickerProps> = (props) => (
+const TextPicker: FC<ITextPickerProps> = (props) => (
 	<View><Text>Text picker</Text></View>
 );
 

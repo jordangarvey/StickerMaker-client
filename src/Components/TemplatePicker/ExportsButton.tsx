@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import * as C from "../../Global/Colours";
@@ -7,7 +7,7 @@ import * as C from "../../Global/Colours";
 /**
  * Component to render a Category button
  */
-const ExportsButton: SFC = () => (
+const ExportsButton: FC = () => (
 	<TouchableOpacity
 		style={styles.exportsButton}
 	>

@@ -1,4 +1,4 @@
-import React, { Component, SFC } from "react";
+import React, { Component, FC } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
 import * as C from "../Global/Colours";
@@ -7,7 +7,7 @@ import * as C from "../Global/Colours";
 /**
  * Component to render the screen container
  */
-const ScreenContainer: SFC<Component> = (props) => (
+const ScreenContainer: FC<Component> = (props) => (
 	<ScrollView
 		alwaysBounceVertical={ false }
 		indicatorStyle="black"

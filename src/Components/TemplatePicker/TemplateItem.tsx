@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import Shapes from "./Shapes";
@@ -19,7 +19,7 @@ interface ITemplateItemProps {
 /**
  * Component to render a Template Item
  */
-const TemplateItem: SFC<ITemplateItemProps> = (props) => (
+const TemplateItem: FC<ITemplateItemProps> = (props) => (
 	<View style={[{ backgroundColor: props.colour || "green" }, styles.item]}>
 		<Text>{props.text}</Text>
 	</View>

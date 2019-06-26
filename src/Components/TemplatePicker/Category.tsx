@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import Categories from "./Categories";
@@ -21,7 +21,7 @@ interface ICategoryProps {
 /**
  * Component to render a Category button
  */
-const Category: SFC<ICategoryProps> = (props) => {
+const Category: FC<ICategoryProps> = (props) => {
 	return (
 		<TouchableOpacity
 			style={[
