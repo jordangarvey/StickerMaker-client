@@ -7,26 +7,27 @@ import Category from "./Category";
 
 
 /**
- * Interface for the Template Categories Container props
+ * Interface for the Categories Container props
  */
-interface ITemplateCategoriesContainerProps {
+interface ICategoriesContainerProps {
+	/** Callback to be fired whenever the option button is pressed */
+	onPress(category: Categories): void;
+
 	/** The currently selected category */
 	currentCategory?: Categories;
-	/** On press callback to be fired whenever the option button is pressed */
-	onPress(category: Categories): void;
 }
 
 /**
- * Component to render a Template Categories Container
+ * Component to render a Categories Container
  */
-const TemplateCategoriesContainer: FC<ITemplateCategoriesContainerProps> = (props) => (
+const CategoriesContainer: FC<ICategoriesContainerProps> = (props) => (
 	<View style={styles.categoriesContainer}>
 		<ScrollView horizontal={true}>
 			{
-				Object.keys(Categories).map(category => (
+				Object.keys(Categories).map((category: any) => (
 					<Category
 						key={Categories[category]}
-						category={Categories[category]}
+						category={Categories[category] as Categories}
 						onPress={props.onPress}
 						selected={Categories[category] === props.currentCategory}
 					/>
@@ -46,4 +47,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default TemplateCategoriesContainer;
+export default CategoriesContainer;

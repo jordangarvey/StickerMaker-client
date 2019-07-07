@@ -2,19 +2,19 @@ import React from "react";
 
 import renderer from "react-test-renderer";
 
-import Button from "../Button";
+import TextPicker from "../TextPicker";
 
 
-describe("The Button component’s snapshot", () => {
+describe("The Text Picker component’s snapshot", () => {
 	it("renders as expected", () => {
 		function mockFunction() {
 			console.log("Test")
 		}
 
 		const component = renderer.create(
-			<Button
-				onPress={mockFunction}
-				text="Test"
+			<TextPicker
+				currentText="Test"
+				onChange={mockFunction}
 			/>
 		).toJSON();
 

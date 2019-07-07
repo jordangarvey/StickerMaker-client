@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The Home component’s snapshot renders as expected 1`] = `
-<View
-  style={
-    Object {
-      "marginTop": 50,
-    }
-  }
->
+exports[`The Shape component’s snapshot renders as expected 1`] = `
+Array [
   <View
     accessible={true}
     isTVSelectable={true}
@@ -19,20 +13,16 @@ exports[`The Home component’s snapshot renders as expected 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 12,
-        "borderWidth": 1,
-        "color": "black",
-        "fontSize": 24,
+        "backgroundColor": "green",
+        "borderRadius": 20,
+        "height": 50,
         "opacity": 1,
-        "overflow": "hidden",
-        "padding": 12,
-        "textAlign": "center",
+        "width": 80,
       }
     }
-  >
-    <Text>
-      Create a sticker
-    </Text>
-  </View>
-</View>
+  />,
+  <Text>
+    Rectangle
+  </Text>,
+]
 `;

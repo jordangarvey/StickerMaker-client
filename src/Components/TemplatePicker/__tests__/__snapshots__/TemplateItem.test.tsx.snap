@@ -5,7 +5,12 @@ exports[`The Template Item component’s snapshot renders as expected 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "green",
+        "backgroundColor": "#000000",
+      },
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "justifyContent": "center",
       },
       Object {
         "height": 100,
@@ -14,6 +19,14 @@ exports[`The Template Item component’s snapshot renders as expected 1`] = `
     ]
   }
 >
-  <Text />
+  <Text
+    style={
+      Object {
+        "color": "white",
+      }
+    }
+  >
+    Mock item
+  </Text>
 </View>
 `;

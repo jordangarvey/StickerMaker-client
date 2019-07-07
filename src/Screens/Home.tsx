@@ -1,15 +1,15 @@
 import React, { PureComponent } from "react";
-import { StyleSheet } from "react-native";
-import { NavigationScreenProp } from "react-navigation";
+import { StyleSheet, View } from "react-native";
 
-import ScreenContainer from "./ScreenContainer";
+import { NavigationScreenProps } from "react-navigation";
+
 import Button from "../Components/Controls/Button";
 
 
 /**
  * Component to render the Home screen
  */
-class Home extends PureComponent<NavigationScreenProp<null>> {
+class Home extends PureComponent<NavigationScreenProps> {
 	public constructor(props: any) {
 		super(props);
 
@@ -25,9 +25,9 @@ class Home extends PureComponent<NavigationScreenProp<null>> {
 	 */
 	public render() {
 		return (
-			<ScreenContainer>
+			<View style={styles.container}>
 				<Button onPress={this.navigateToTemplatePicker}>Create a sticker</Button>
-			</ScreenContainer>
+			</View>
 		);
 	}
 }
@@ -36,7 +36,9 @@ class Home extends PureComponent<NavigationScreenProp<null>> {
  * Styles for the Home screen
  */
 const styles = StyleSheet.create({
-
+	container: {
+		marginTop: 50
+	}
 });
 
 export default Home;

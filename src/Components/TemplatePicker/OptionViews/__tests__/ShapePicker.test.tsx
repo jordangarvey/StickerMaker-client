@@ -2,19 +2,21 @@ import React from "react";
 
 import renderer from "react-test-renderer";
 
-import Button from "../Button";
+import Shapes from "../../Shapes";
+
+import ShapePicker from "../ShapePicker";
 
 
-describe("The Button component’s snapshot", () => {
+describe("The Shape Picker component’s snapshot", () => {
 	it("renders as expected", () => {
 		function mockFunction() {
 			console.log("Test")
 		}
 
 		const component = renderer.create(
-			<Button
+			<ShapePicker
+				currentShape={Shapes.Rect}
 				onPress={mockFunction}
-				text="Test"
 			/>
 		).toJSON();
 

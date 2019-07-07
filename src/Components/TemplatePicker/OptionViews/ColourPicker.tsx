@@ -1,31 +1,44 @@
-import React, { FC } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import React, { FC, Fragment } from "react";
+import { StyleSheet } from "react-native";
 
-import Shapes from "../Shapes";
+import Categories from "../Categories";
+import Colours from "../Colours";
 
+import Colour from "./Colour";
 
 
 /**
  * Interface for the Colour Picker props
  */
 interface IColourPickerProps {
-	currentOption?: Shapes;
+		/** The currently selected colour */
+	currentColour: Colours;
+	/** Callback to be fired whenever the text value is changed */
+	onPress(category: Categories, option: string): void;
 }
 
 /**
  * Component to render the Colour Picker
  */
 const ColourPicker: FC<IColourPickerProps> = (props) => (
-	<View><Text>Colour picker</Text></View>
+	<Fragment>
+		{
+			Object.keys(Colours).map((colour: any) => (
+				<Colour
+					key={Colours[colour]}
+					onPress={props.onPress}
+					colour={Colours[colour] as Colours}
+					selected={Colours[colour] === props.currentColour}
+				/>
+			))
+		}
+	</Fragment>
 );
 
 /**
  * Styles for the Colour Picker
  */
 const styles = StyleSheet.create({
-	templateOptionsContainer: {
-	
-	}
 });
 
 export default ColourPicker;

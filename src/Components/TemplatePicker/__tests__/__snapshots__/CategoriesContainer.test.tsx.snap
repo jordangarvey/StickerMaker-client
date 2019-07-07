@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Categories Container component’s snapshot renders as expected 1`] = `
+<View
+  style={
+    Object {
+      "marginBottom": 20,
+      "width": "100%",
+    }
+  }
+>
+  <RCTScrollView
+    horizontal={true}
+  >
+    <View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 6,
+            "flexDirection": "row",
+            "height": 80,
+            "justifyContent": "center",
+            "marginHorizontal": 20,
+            "opacity": 1,
+            "padding": 5,
+            "width": 60,
+          }
+        }
+      >
+        <Text
+          style={false}
+        >
+          Colour
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 6,
+            "flexDirection": "row",
+            "height": 80,
+            "justifyContent": "center",
+            "marginHorizontal": 20,
+            "opacity": 1,
+            "padding": 5,
+            "width": 60,
+          }
+        }
+      >
+        <Text
+          style={false}
+        >
+          Shape
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 6,
+            "flexDirection": "row",
+            "height": 80,
+            "justifyContent": "center",
+            "marginHorizontal": 20,
+            "opacity": 1,
+            "padding": 5,
+            "width": 60,
+          }
+        }
+      >
+        <Text
+          style={false}
+        >
+          Text
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

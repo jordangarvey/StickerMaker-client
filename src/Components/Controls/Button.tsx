@@ -8,6 +8,7 @@ import { Text, TouchableOpacity, StyleSheet } from "react-native";
 interface IButtonProps {
 	/** The current tab of the template choosing process */
 	onPress(): void;
+
 	/** The button text */
 	text?: string;
 }

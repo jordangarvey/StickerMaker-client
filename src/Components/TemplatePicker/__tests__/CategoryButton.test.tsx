@@ -2,19 +2,23 @@ import React from "react";
 
 import renderer from "react-test-renderer";
 
-import Button from "../Button";
+import Categories from "../Categories";
+import Shapes from "../Shapes";
+
+import CategoryButton from "../CategoryButton";
 
 
-describe("The Button component’s snapshot", () => {
+describe("The Category Button component’s snapshot", () => {
 	it("renders as expected", () => {
 		function mockFunction() {
 			console.log("Test")
 		}
 
 		const component = renderer.create(
-			<Button
+			<CategoryButton
+				category={Categories.Shape}
+				option={Shapes.Rect}
 				onPress={mockFunction}
-				text="Test"
 			/>
 		).toJSON();
 

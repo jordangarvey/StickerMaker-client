@@ -3,7 +3,6 @@
  */
 enum Shapes {
 	Square = "square",
-	Circle = "circle",
 	Rect = "rect"
 }
 

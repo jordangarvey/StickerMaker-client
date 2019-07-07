@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import Categories from "./Categories";
 import Shapes from "./Shapes";
@@ -8,41 +8,44 @@ import * as C from "../../Global/Colours";
 
 
 /**
- * Interface for the Category Option props
+ * Interface for the Category Button props
  */
-interface ICategoryOptionProps {
+interface ICategoryButtonProps {
 	/** The currently selected category this option belongs to e.g. shapes, text */
 	category: Categories;
 	/** The option that this button should display e.g. circle, square */
 	option: Shapes;
 	/** On press callback to be fired whenever the option button is pressed */
 	onPress(option: Shapes): void;
+
 	/** Optional boolean for whether or not this option is currently selected */
 	selected?: boolean;
 }
 
 /**
- * Component to render a Category Option button
+ * Component to render a Category Button button
  */
-const CategoryOption: FC<ICategoryOptionProps> = (props) => {
+const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 	return (
-		<View
+		<TouchableOpacity
 			onPress={props.onPress.bind(null, props.option)}
 			style={[
-				styles.categoryOption,
-				props.selected && { backgroundColor: C.primary, color: C.textPrimary }
+				styles.CategoryButton,
+				props.selected && { backgroundColor: C.primary }
 			]}
 		>
-			<Text>{props.option.charAt(0).toUpperCase() + props.option.slice(1)}</Text>
-		</View>
+			<Text style={props.selected && { color: C.textPrimary }}>
+				{ props.option.charAt(0).toUpperCase() + props.option.slice(1) }
+			</Text>
+		</TouchableOpacity>
 	);
 };
 
 /**
- * Styles for the Category Option button
+ * Styles for the Category Button button
  */
 const styles = StyleSheet.create({
-	categoryOption: {
+	CategoryButton: {
 		alignItems: "flex-end",
 		backgroundColor: C.secondary,
 		borderRadius: 6,
@@ -55,4 +58,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default CategoryOption;
+export default CategoryButton;

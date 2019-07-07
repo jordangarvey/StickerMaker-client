@@ -1,31 +1,32 @@
 import React, { FC } from "react";
-import { StyleSheet, View, Text } from "react-native";
-
-import Shapes from "../Shapes";
-
+import { TextInput, StyleSheet } from "react-native";
 
 
 /**
  * Interface for the Text Picker props
  */
 interface ITextPickerProps {
-	currentOption?: Shapes;
+	/** The currently selected text */
+	currentText: string;
+	/** Callback to be fired whenever the text value is changed */
+	onChange(text: string): void;
 }
 
 /**
  * Component to render the Text Picker
  */
 const TextPicker: FC<ITextPickerProps> = (props) => (
-	<View><Text>Text picker</Text></View>
+	<TextInput
+		autoFocus={true}
+		onChangeText={props.onChange}
+		value={props.currentText}
+	/>
 );
 
 /**
  * Styles for the Text Picker
  */
 const styles = StyleSheet.create({
-	templateOptionsContainer: {
-	
-	}
 });
 
 export default TextPicker;

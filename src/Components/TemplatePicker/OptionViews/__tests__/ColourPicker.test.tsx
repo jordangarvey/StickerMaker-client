@@ -1,17 +1,21 @@
 import React from "react";
+
 import renderer from "react-test-renderer";
 
-import TemplateCategoriesContainer from "../TemplateCategoriesContainer";
+import Colours from "../../Colours";
+
+import ColourPicker from "../ColourPicker";
 
 
-describe("The Template Categories Container component’s snapshot", () => {
+describe("The Colour Picker component’s snapshot", () => {
 	it("renders as expected", () => {
 		function mockFunction() {
 			console.log("Test")
 		}
 
 		const component = renderer.create(
-			<TemplateCategoriesContainer
+			<ColourPicker
+				currentColour={Colours.Black}
 				onPress={mockFunction}
 			/>
 		).toJSON();

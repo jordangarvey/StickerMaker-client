@@ -14,6 +14,7 @@ interface ICategoryProps {
 	category: Categories;
 	/** On press callback to be fired whenever the option button is pressed */
 	onPress(category: Categories): void;
+
 	/** Optional boolean for whether or not this option is currently selected */
 	selected?: boolean;
 }

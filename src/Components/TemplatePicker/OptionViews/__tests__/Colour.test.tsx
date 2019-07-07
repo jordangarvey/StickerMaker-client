@@ -1,23 +1,22 @@
 import React from "react";
+
 import renderer from "react-test-renderer";
 
-import Categories from "../Categories";
-import Shapes from "../Shapes";
+import Colours from "../../Colours";
 
-import CategoryOption from "../CategoryOption";
+import Colour from "../Colour";
 
 
-describe("The Category Option component’s snapshot", () => {
+describe("The Colour component’s snapshot", () => {
 	it("renders as expected", () => {
 		function mockFunction() {
 			console.log("Test")
 		}
 
 		const component = renderer.create(
-			<CategoryOption
-				category={Categories.Shape}
-				option={Shapes.Circle}
+			<Colour
 				onPress={mockFunction}
+				colour={Colours.Black}
 			/>
 		).toJSON();
 

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Text Picker component’s snapshot renders as expected 1`] = `
+<TextInput
+  allowFontScaling={true}
+  autoFocus={true}
+  onChangeText={[Function]}
+  rejectResponderTermination={true}
+  underlineColorAndroid="transparent"
+  value="Test"
+/>
+`;
