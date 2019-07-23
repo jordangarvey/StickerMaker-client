@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CameraRoll, Image, StyleSheet, View } from "react-native";
+import { CameraRoll, StyleSheet, View } from "react-native";
 
 import ViewShot from "react-native-view-shot";
 
@@ -63,7 +63,7 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 				console.warn(e.message);
 			});
 		})
-		.catch((error: error) => {
+		.catch((error: Error) => {
 			console.error(error);
 		});
 	}
@@ -110,23 +110,13 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		return (
 			<View style={styles.fullWidthBackground}>
 				<View style={styles.templateItemContainer}>
-					<ViewShot ref="templateItem" options={{ format: "png" }}>
+					<ViewShot ref="templateItem">
 						<TemplateItem
 							colour={this.state.currentOptions.colour}
 							shape={this.state.currentOptions.shape}
 							text={this.state.currentOptions.text}
 						/>
 					</ViewShot>
-
-					{
-						this.state.res &&
-						<Image
-							fadeDuration={0}
-							resizeMode="contain"
-							source={this.state.res}
-							style={{ height: 100, width: 100 }}
-						/>
-					}
 				</View>
 
 				<View style={styles.bottomContainer}>
