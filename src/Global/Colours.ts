@@ -1,7 +1,7 @@
 /** Primary colour */
 export const primary = "#18A0FB";
 /** Alternate primary colour */
-export const primaryAly = "#E8F5FF"
+export const primaryAlt = "#E8F5FF"
 /** Secondary colour */
 export const secondary = "#FFFFFF";
 /** Alternate secondary colour */
