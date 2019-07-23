@@ -5,15 +5,28 @@ import * as C from "../../Global/Colours";
 
 
 /**
+ * Interface for the Template Item props
+ */
+interface IExportsButtonProps {
+	/** Callback to handle the image rendering */
+	onCapture(): void;
+	/** Tag of the image to save */
+	tag: string;
+}
+
+/**
  * Component to render a Category button
  */
-const ExportsButton: FC = () => (
-	<TouchableOpacity
-		style={styles.exportsButton}
-	>
-		<Text style={styles.buttonText}>Export to camera roll</Text>
-	</TouchableOpacity>
-);
+const ExportsButton: FC<IExportsButtonProps> = (props) => {
+	return (
+		<TouchableOpacity
+			onPress={props.onCapture}
+			style={styles.exportsButton}
+		>
+			<Text style={styles.buttonText}>Export to camera roll</Text>
+		</TouchableOpacity>
+	);
+};
 
 /**
  * Styles for the Category button

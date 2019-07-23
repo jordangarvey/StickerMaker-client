@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { CameraRoll, Image, StyleSheet, View } from "react-native";
+
+import ViewShot from "react-native-view-shot";
 
 import Categories from "../Components/TemplatePicker/Categories";
 import Colours from "../Components/TemplatePicker/Colours";
@@ -42,18 +44,41 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		};
 
 		// Bind this component’s methods
+		this.capture = this.capture.bind(this);
 		this.onCategoryButtonPress = this.onCategoryButtonPress.bind(this);
 		this.onTextValueChange = this.onTextValueChange.bind(this);
 		this.onOptionButtonPress = this.onOptionButtonPress.bind(this);
 	}
 
-	/** Method to be fired whenever a category button is pressed */
+	private capture() {
+		this.refs.templateItem.capture()
+		.then((uri: string) => {
+			CameraRoll.saveToCameraRoll(uri)
+			.then(uri => {
+				console.warn(uri);
+			})
+			.catch(e => {
+				// TODO: handle the user rejecting camera roll permission here (or in the next catch block)
+				// Also, if they reject the permission, we’ll have to add a check on app load to ask if we want to redirect them to the settings page
+				console.warn(e.message);
+			});
+		})
+		.catch((error: error) => {
+			console.error(error);
+		});
+	}
+	
+	/**
+	 * Method to be fired whenever a category button is pressed
+	 */
 	private onCategoryButtonPress(category: Categories) {
 		const currentCategory = this.state.currentCategory !== category ? category : undefined;
 		this.setState({ currentCategory });
 	}
 
-	/** Method to be fired whenever an option button is pressed */
+	/**
+	 * Method to be fired whenever an option button is pressed
+	 */
 	private onOptionButtonPress(category: Categories, option: Colours | Shapes) {
 		const currentOptions = this.state.currentOptions;
 		switch(category) {
@@ -68,7 +93,9 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		this.setState({ currentOptions });
 	}
 
-	/** Method to be fired whenever the text value is changed */
+	/**
+	 * Method to be fired whenever the text value is changed
+	 */
 	private onTextValueChange(text: string) {
 		const currentOptions = this.state.currentOptions;
 		currentOptions.text = text;
@@ -83,11 +110,23 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		return (
 			<View style={styles.fullWidthBackground}>
 				<View style={styles.templateItemContainer}>
-					<TemplateItem
-						colour={this.state.currentOptions.colour}
-						shape={this.state.currentOptions.shape}
-						text={this.state.currentOptions.text}
-					/>
+					<ViewShot ref="templateItem" options={{ format: "png" }}>
+						<TemplateItem
+							colour={this.state.currentOptions.colour}
+							shape={this.state.currentOptions.shape}
+							text={this.state.currentOptions.text}
+						/>
+					</ViewShot>
+
+					{
+						this.state.res &&
+						<Image
+							fadeDuration={0}
+							resizeMode="contain"
+							source={this.state.res}
+							style={{ height: 100, width: 100 }}
+						/>
+					}
 				</View>
 
 				<View style={styles.bottomContainer}>
@@ -98,6 +137,7 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 					<OptionsContainer
 						currentCategory={this.state.currentCategory}
 						currentOptions={this.state.currentOptions}
+						onCapture={this.capture}
 						onChange={this.onTextValueChange}
 						onPress={this.onOptionButtonPress}
 					/>

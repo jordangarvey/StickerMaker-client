@@ -18,6 +18,8 @@ import ISelectedOptions from "./ISelectedOptions";
 interface IOptionsContainerProps {
 	/** The currently selected options */
 	currentOptions: ISelectedOptions;
+	/** Callback to be fired then the camera roll button is pressed */
+	onCapture(): void;
 	/** Callback to be fired whenever the text value changes */
 	onChange(text: string): void;
 	/** Callback to be fired whenever a option is pressed */
@@ -58,7 +60,7 @@ const OptionsContainer: FC<IOptionsContainerProps> = (props) => {
 		<View style={styles.optionsContainer}>
 			<ScrollView horizontal={true} style={styles.optionsScrollContainer}>{options}</ScrollView>
 
-			<ExportsButton/>
+			<ExportsButton onCapture={props.onCapture}/>
 		</View>
 	);
 };
