@@ -40,9 +40,6 @@ const TemplateItem: FC<ITemplateItemProps> = (props) => {
 	);
 };
 
-/**
- * Styles for the Template Item
- */
 const styles = StyleSheet.create({
 	item: {
 		alignItems: "center",

@@ -20,9 +20,6 @@ class Home extends PureComponent<NavigationScreenProps> {
 		this.props.navigation.navigate("TemplatePicker");
 	}
 
-	/**
-	 * Render the Home screen
-	 */
 	public render() {
 		return (
 			<View style={styles.container}>
@@ -32,9 +29,6 @@ class Home extends PureComponent<NavigationScreenProps> {
 	}
 }
 
-/**
- * Styles for the Home screen
- */
 const styles = StyleSheet.create({
 	container: {
 		marginTop: 50

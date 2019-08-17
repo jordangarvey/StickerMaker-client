@@ -35,9 +35,6 @@ const ColourPicker: FC<IColourPickerProps> = (props) => (
 	</Fragment>
 );
 
-/**
- * Styles for the Colour Picker
- */
 const styles = StyleSheet.create({
 });
 

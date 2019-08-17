@@ -23,9 +23,6 @@ const TextPicker: FC<ITextPickerProps> = (props) => (
 	/>
 );
 
-/**
- * Styles for the Text Picker
- */
 const styles = StyleSheet.create({
 });
 

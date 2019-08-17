@@ -19,7 +19,7 @@ interface IShapeProps {
 }
 
 /**
- * Component to render the Shape component
+ * Component to render a colour button
  */
 const Shape: FC<IShapeProps> = (props) => (
 	<Fragment>
@@ -38,9 +38,6 @@ const Shape: FC<IShapeProps> = (props) => (
 	</Fragment>
 );
 
-/**
- * Styles for the Shape component
- */
 const styles = StyleSheet.create({
 	colour: {
 		borderRadius: 25,

@@ -36,9 +36,6 @@ const Category: FC<ICategoryProps> = (props) => {
 	);
 };
 
-/**
- * Styles for the Category button
- */
 const styles = StyleSheet.create({
 	category: {
 		alignItems: "flex-end",

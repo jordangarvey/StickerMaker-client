@@ -17,9 +17,6 @@ interface ICategoriesContainerProps {
 	currentCategory?: Categories;
 }
 
-/**
- * Component to render a Categories Container
- */
 const CategoriesContainer: FC<ICategoriesContainerProps> = (props) => (
 	<View style={styles.categoriesContainer}>
 		<ScrollView horizontal={true}>

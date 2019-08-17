@@ -41,9 +41,6 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 	);
 };
 
-/**
- * Styles for the Category Button button
- */
 const styles = StyleSheet.create({
 	CategoryButton: {
 		alignItems: "flex-end",

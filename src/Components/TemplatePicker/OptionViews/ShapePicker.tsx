@@ -35,9 +35,6 @@ const ShapePicker: FC<IShapePickerProps> = (props) => (
 	</Fragment>
 );
 
-/**
- * Styles for the Shape Picker
- */
 const styles = StyleSheet.create({
 	
 });

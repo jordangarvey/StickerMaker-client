@@ -28,9 +28,6 @@ const ExportsButton: FC<IExportsButtonProps> = (props) => {
 	);
 };
 
-/**
- * Styles for the Category button
- */
 const styles = StyleSheet.create({
 	buttonText: {
 		color: C.secondary,

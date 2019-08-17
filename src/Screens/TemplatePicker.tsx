@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CameraRoll, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import ViewShot from "react-native-view-shot";
 
@@ -103,9 +103,6 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		this.setState({ currentOptions });
 	}
 
-	/**
-	 * Render the Template Picker screen
-	 */
 	public render() {
 		return (
 			<View style={styles.fullWidthBackground}>
@@ -137,9 +134,6 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 	}
 }
 
-/**
- * Styles for the Template Picker screen
- */
 const styles = StyleSheet.create({
 	bottomContainer: {
 		bottom: 0,

@@ -19,7 +19,7 @@ interface IShapeProps {
 }
 
 /**
- * Component to render the Shape component
+ * Component to render a shape button
  */
 const Shape: FC<IShapeProps> = (props) => {
 	let style: object;
@@ -55,9 +55,6 @@ const Shape: FC<IShapeProps> = (props) => {
 	);
 };
 
-/**
- * Styles for the Shape component
- */
 const styles = StyleSheet.create({
 	rect: {
 		backgroundColor: "green",

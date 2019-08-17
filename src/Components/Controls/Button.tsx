@@ -22,9 +22,6 @@ const Button: FC<IButtonProps> = (props) => (
 	</TouchableOpacity>
 );
 
-/**
- * Styles for the Button
- */
 const styles = StyleSheet.create({
 	button: {
 		borderWidth: 1,
