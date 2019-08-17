@@ -4,7 +4,9 @@ exports[`The Colour Picker component’s snapshot renders as expected 1`] = `
 Array [
   <View
     accessible={true}
+    clickable={true}
     isTVSelectable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -25,7 +27,9 @@ Array [
   />,
   <View
     accessible={true}
+    clickable={true}
     isTVSelectable={true}
+    onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
