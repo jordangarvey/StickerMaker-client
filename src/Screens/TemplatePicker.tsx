@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { NativeModules, StyleSheet, View } from "react-native";
 
 import ViewShot from "react-native-view-shot";
 
@@ -23,8 +23,10 @@ interface ITemplatePickerState {
 	/** The currently selected options */
 	currentOptions: ISelectedOptions;
 
-	/** The currently selected category */
+	/** The currently selected category, if any */
 	currentCategory?: Categories;
+	/** Optional error that’s thrown from the component */
+	error?: Error;
 }
 
 /**
@@ -50,22 +52,17 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		this.onOptionButtonPress = this.onOptionButtonPress.bind(this);
 	}
 
-	private capture() {
-		this.refs.templateItem.capture()
-		.then((uri: string) => {
-			CameraRoll.saveToCameraRoll(uri)
-			.then(uri => {
-				console.warn(uri);
-			})
-			.catch(e => {
-				// TODO: handle the user rejecting camera roll permission here (or in the next catch block)
-				// Also, if they reject the permission, we’ll have to add a check on app load to ask if we want to redirect them to the settings page
-				console.warn(e.message);
-			});
-		})
-		.catch((error: Error) => {
+	private async capture() {
+		let addBase64Image: string;
+		try {
+			base64Image = await this.refs.templateItem.capture();
+		} catch(error) {
 			console.error(error);
-		});
+			this.setState({ error });
+			return;
+		}
+
+		NativeModules.BetterClipboard.addBase64Image(addBase64Image);
 	}
 	
 	/**
@@ -107,7 +104,7 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		return (
 			<View style={styles.fullWidthBackground}>
 				<View style={styles.templateItemContainer}>
-					<ViewShot ref="templateItem">
+					<ViewShot ref="templateItem" options={{ result: "base64" }}>
 						<TemplateItem
 							colour={this.state.currentOptions.colour}
 							shape={this.state.currentOptions.shape}
