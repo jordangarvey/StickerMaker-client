@@ -8,10 +8,8 @@ import * as C from "../../Global/Colours";
  * Interface for the Template Item props
  */
 interface IExportsButtonProps {
-	/** Callback to handle the image rendering */
-	onCapture(): void;
-	/** Tag of the image to save */
-	tag: string;
+	/** Callback to handle the image copying */
+	onCopy(): void;
 }
 
 /**
@@ -20,10 +18,10 @@ interface IExportsButtonProps {
 const ExportsButton: FC<IExportsButtonProps> = (props) => {
 	return (
 		<TouchableOpacity
-			onPress={props.onCapture}
+			onPress={props.onCopy}
 			style={styles.exportsButton}
 		>
-			<Text style={styles.buttonText}>Export to camera roll</Text>
+			<Text style={styles.buttonText}>Copy to clipboard</Text>
 		</TouchableOpacity>
 	);
 };
@@ -41,12 +39,13 @@ const styles = StyleSheet.create({
 		borderBottomRightRadius: 30,
 		borderTopLeftRadius: 6,
 		borderTopRightRadius: 6,
-		height: 70,
+		bottom: 20,
 		flexDirection: "row",
+		height: 70,
 		justifyContent: "center",
-		marginHorizontal: 20,
+		left: "10%",
 		padding: 5,
-		width: "100%"
+		width: "90%"
 	}
 });
 

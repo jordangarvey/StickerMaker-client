@@ -9,9 +9,11 @@ import Shapes from "../Components/TemplatePicker/Shapes";
 
 import ISelectedOptions from "../Components/TemplatePicker/ISelectedOptions";
 
-import TemplateItem from "../Components/TemplatePicker/TemplateItem";
 import CategoriesContainer from "../Components/TemplatePicker/CategoriesContainer";
+import ExportsButton from "../Components/Controls/ExportsButton";
+import Header from "../Components/Layout/Header";
 import OptionsContainer from "../Components/TemplatePicker/OptionsContainer";
+import TemplateItem from "../Components/TemplatePicker/TemplateItem";
 
 import * as C from "../Global/Colours";
 
@@ -103,6 +105,8 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 	public render() {
 		return (
 			<View style={styles.fullWidthBackground}>
+				<Header/>
+
 				<View style={styles.templateItemContainer}>
 					<ViewShot ref="templateItem" options={{ result: "base64" }}>
 						<TemplateItem
@@ -118,13 +122,18 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 						currentCategory={this.state.currentCategory}
 						onPress={this.onCategoryButtonPress}
 					/>
-					<OptionsContainer
-						currentCategory={this.state.currentCategory}
-						currentOptions={this.state.currentOptions}
-						onCapture={this.capture}
-						onChange={this.onTextValueChange}
-						onPress={this.onOptionButtonPress}
-					/>
+
+					<View style={styles.bottomSolidContainer}>
+						<OptionsContainer
+							currentCategory={this.state.currentCategory}
+							currentOptions={this.state.currentOptions}
+							onCapture={this.capture}
+							onChange={this.onTextValueChange}
+							onPress={this.onOptionButtonPress}
+						/>
+
+						<ExportsButton onCopy={this.capture}/>
+					</View>
 				</View>
 			</View>
 		);
@@ -138,6 +147,11 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between",
 		position: "absolute",
 		width: "100%"
+	},
+	bottomSolidContainer: {
+		backgroundColor: "#FFFFFF",
+		borderColor: "#000000",
+		borderWidth: 0.5
 	},
 	fullWidthBackground: {
 		...StyleSheet.absoluteFillObject,

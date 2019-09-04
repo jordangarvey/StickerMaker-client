@@ -6,7 +6,6 @@ import Colours from "./Colours";
 import Shapes from "./Shapes";
 
 import ColourPicker from "./OptionViews/ColourPicker";
-import ExportsButton from "./ExportsButton";
 import ShapePicker from "./OptionViews/ShapePicker";
 import TextPicker from "./OptionViews/TextPicker";
 import ISelectedOptions from "./ISelectedOptions";
@@ -59,22 +58,17 @@ const OptionsContainer: FC<IOptionsContainerProps> = (props) => {
 	return (
 		<View style={styles.optionsContainer}>
 			<ScrollView horizontal={true} style={styles.optionsScrollContainer}>{options}</ScrollView>
-
-			<ExportsButton onCapture={props.onCapture}/>
 		</View>
 	);
 };
 
 const styles = StyleSheet.create({
 	optionsScrollContainer: {
-		height: 200,
+		height: 125,
 		width: "100%"
 	},
 	optionsContainer: {
-		backgroundColor: "#FFFFFF",
-		borderColor: "#000000",
-		borderWidth: 0.5,
-		height: 300,
+		height: 125,
 		width: "100%"
 	}
 });

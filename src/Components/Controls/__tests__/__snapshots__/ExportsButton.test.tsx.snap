@@ -18,13 +18,14 @@ exports[`The Exports Button component’s snapshot renders as expected 1`] = `
       "borderBottomRightRadius": 30,
       "borderTopLeftRadius": 6,
       "borderTopRightRadius": 6,
+      "bottom": 20,
       "flexDirection": "row",
       "height": 70,
       "justifyContent": "center",
-      "marginHorizontal": 20,
+      "left": "10%",
       "opacity": 1,
       "padding": 5,
-      "width": "100%",
+      "width": "90%",
     }
   }
 >
@@ -37,7 +38,7 @@ exports[`The Exports Button component’s snapshot renders as expected 1`] = `
       }
     }
   >
-    Export to camera roll
+    Copy to clipboard
   </Text>
 </View>
 `;

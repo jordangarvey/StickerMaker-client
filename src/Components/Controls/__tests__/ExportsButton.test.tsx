@@ -7,8 +7,12 @@ import ExportsButton from "../ExportsButton";
 
 describe("The Exports Button component’s snapshot", () => {
 	it("renders as expected", () => {
+		function mockFunction() {
+			console.log("Test");
+		}
+
 		const component = renderer.create(
-			<ExportsButton/>
+			<ExportsButton onCopy={mockFunction}/>
 		).toJSON();
 
 

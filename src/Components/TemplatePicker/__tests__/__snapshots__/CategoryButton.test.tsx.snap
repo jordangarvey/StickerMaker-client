@@ -3,9 +3,7 @@
 exports[`The Category Button component’s snapshot renders as expected 1`] = `
 <View
   accessible={true}
-  clickable={true}
   isTVSelectable={true}
-  onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -20,7 +18,7 @@ exports[`The Category Button component’s snapshot renders as expected 1`] = `
       "flexDirection": "row",
       "height": 80,
       "justifyContent": "center",
-      "marginHorizontal": 10,
+      "marginHorizontal": 5,
       "opacity": 1,
       "padding": 5,
       "width": 60,

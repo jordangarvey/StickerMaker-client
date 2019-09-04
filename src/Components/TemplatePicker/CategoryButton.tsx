@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
 		height: 80,
 		flexDirection: "row",
 		justifyContent: "center",
-		marginHorizontal: 10,
+		marginHorizontal: 5,
 		padding: 5,
 		width: 60
 	}
