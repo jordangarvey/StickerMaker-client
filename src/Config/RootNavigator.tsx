@@ -1,6 +1,5 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
-import Home from "../Screens/Home";
 import TemplatePicker from "../Screens/TemplatePicker";
 
 
@@ -10,11 +9,10 @@ import TemplatePicker from "../Screens/TemplatePicker";
  */
 const RootNavigator = createStackNavigator(
 	{
-		Home,
 		TemplatePicker
 	},
 	{
-		initialRouteName: "Home",
+		initialRouteName: "TemplatePicker",
 		headerMode: "none",
 		navigationOptions: {
 			gesturesEnabled: false,
