@@ -2,6 +2,7 @@ import React, { FC, Fragment } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import Categories from "../Categories";
+import Colours from "../Colours";
 import Shapes from "../Shapes";
 
 
@@ -13,6 +14,8 @@ interface IShapeProps {
 	onPress(category: Categories, option: Shapes): void;
 	/** The shape this component should display as */
 	shape: Shapes;
+	/** The currently selected colour, to use as the preview colour */
+	selectedColour: Colours;
 
 	/** Optional boolean option value if this shape is selected */
 	selected?: boolean;
@@ -44,6 +47,7 @@ const Shape: FC<IShapeProps> = (props) => {
 				onPress={props.onPress.bind(null, Categories.Shape, props.shape)}
 				style={
 					[
+						{ backgroundColor: props.selectedColour },
 						style,
 						styles.shape,
 						props.selected && styles.selected
@@ -57,7 +61,6 @@ const Shape: FC<IShapeProps> = (props) => {
 
 const styles = StyleSheet.create({
 	rect: {
-		backgroundColor: "green",
 		width: 80
 	},
 	selected: {
@@ -69,7 +72,6 @@ const styles = StyleSheet.create({
 		height: 50
 	},
 	square: {
-		backgroundColor: "yellow",
 		width: 50
 	}
 });

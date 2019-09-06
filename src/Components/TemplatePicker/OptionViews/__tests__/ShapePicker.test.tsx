@@ -4,6 +4,7 @@ import renderer from "react-test-renderer";
 
 import Shapes from "../../Shapes";
 
+import Colours from "../../Colours";
 import ShapePicker from "../ShapePicker";
 
 
@@ -17,6 +18,7 @@ describe("The Shape Picker component’s snapshot", () => {
 			<ShapePicker
 				currentShape={Shapes.Rect}
 				onPress={mockFunction}
+				selectedColour={Colours.Black}
 			/>
 		).toJSON();
 

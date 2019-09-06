@@ -45,6 +45,7 @@ const OptionsContainer: FC<IOptionsContainerProps> = (props) => {
 			options = <ShapePicker 
 				currentShape={props.currentOptions.shape}
 				onPress={props.onPress}
+				selectedColour={props.currentOptions.colour}
 			/>;
 			break;
 		case Categories.Text:
