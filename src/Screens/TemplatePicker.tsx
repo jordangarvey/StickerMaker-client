@@ -150,8 +150,8 @@ const styles = StyleSheet.create({
 	},
 	bottomSolidContainer: {
 		backgroundColor: "#FFFFFF",
-		borderColor: "#000000",
-		borderWidth: 0.5
+		borderTopColor: "#000000",
+		borderTopWidth: 0.5
 	},
 	fullWidthBackground: {
 		...StyleSheet.absoluteFillObject,

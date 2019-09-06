@@ -5,8 +5,8 @@ exports[`The Header component’s snapshot renders as expected 1`] = `
   style={
     Object {
       "backgroundColor": "#FFFFFF",
-      "borderColor": "#000000",
-      "borderWidth": 0.5,
+      "borderBottomColor": "#000000",
+      "borderBottomWidth": 0.5,
       "height": 100,
       "width": "100%",
     }
