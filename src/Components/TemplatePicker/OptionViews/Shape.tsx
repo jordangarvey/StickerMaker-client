@@ -5,6 +5,8 @@ import Categories from "../Categories";
 import Colours from "../Colours";
 import Shapes from "../Shapes";
 
+import * as C from "../../../Global/Colours";
+
 
 /**
  * Interface for the Shape component
@@ -64,8 +66,8 @@ const styles = StyleSheet.create({
 		width: 80
 	},
 	selected: {
-		borderColor: "green",
-		borderWidth: 3
+		borderColor: C.selected,
+		borderWidth: 5
 	},
 	shape: {
 		borderRadius: 20,

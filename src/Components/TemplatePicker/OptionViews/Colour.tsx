@@ -4,6 +4,8 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import Categories from "../Categories";
 import Colours from "../Colours";
 
+import * as C from "../../../Global/Colours";
+
 
 /**
  * Interface for the Colour component
@@ -45,8 +47,8 @@ const styles = StyleSheet.create({
 		width: 50
 	},
 	selected: {
-		borderColor: "green",
-		borderWidth: 3
+		borderColor: C.selected,
+		borderWidth: 5
 	}
 });
 

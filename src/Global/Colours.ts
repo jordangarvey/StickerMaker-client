@@ -8,6 +8,8 @@ export const secondary = "#FFFFFF";
 export const secondaryAlt = "#F5F5F5"
 /** Background colour */
 export const background = "#F5F5F5";
+/** Selection colour */
+export const selected = "#333333";
 
 /** Colour for text on primary colours */
 export const textPrimary = "#FFFFFF";

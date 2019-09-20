@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, View } from "react-native";
 
 import Categories from "./Categories";
 
-import Category from "./Category";
+import CategoryButton from "./CategoryButton";
 
 
 /**
@@ -22,7 +22,7 @@ const CategoriesContainer: FC<ICategoriesContainerProps> = (props) => (
 		<ScrollView horizontal={true}>
 			{
 				Object.keys(Categories).map((category: any) => (
-					<Category
+					<CategoryButton
 						key={Categories[category]}
 						category={Categories[category] as Categories}
 						onPress={props.onPress}

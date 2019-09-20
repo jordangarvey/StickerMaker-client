@@ -1,5 +1,5 @@
-import React, { FC, Fragment } from "react";
-import { StyleSheet } from "react-native";
+import React, { FC } from "react";
+import { StyleSheet, View } from "react-native";
 
 import Categories from "../Categories";
 import Colours from "../Colours";
@@ -21,7 +21,7 @@ interface IColourPickerProps {
  * Component to render the Colour Picker
  */
 const ColourPicker: FC<IColourPickerProps> = (props) => (
-	<Fragment>
+	<View style={styles.colourPicker}>
 		{
 			Object.keys(Colours).map((colour: any) => (
 				<Colour
@@ -32,10 +32,14 @@ const ColourPicker: FC<IColourPickerProps> = (props) => (
 				/>
 			))
 		}
-	</Fragment>
+	</View>
 );
 
 const styles = StyleSheet.create({
+	colourPicker: {
+		height: 100,
+		flexWrap: "wrap"
+	}
 });
 
 export default ColourPicker;

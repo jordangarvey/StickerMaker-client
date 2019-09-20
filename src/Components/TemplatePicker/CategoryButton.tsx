@@ -1,57 +1,89 @@
 import React, { FC } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
+import { Icon } from "react-native-elements";
+
 import Categories from "./Categories";
-import Shapes from "./Shapes";
 
 import * as C from "../../Global/Colours";
 
 
 /**
- * Interface for the Category Button props
+ * Interface for the Category props
  */
 interface ICategoryButtonProps {
 	/** The currently selected category this option belongs to e.g. shapes, text */
 	category: Categories;
-	/** The option that this button should display e.g. circle, square */
-	option: Shapes;
 	/** On press callback to be fired whenever the option button is pressed */
-	onPress(option: Shapes): void;
+	onPress(category: Categories): void;
 
 	/** Optional boolean for whether or not this option is currently selected */
 	selected?: boolean;
 }
 
-/**
- * Component to render a Category Button button
- */
+
 const CategoryButton: FC<ICategoryButtonProps> = (props) => {
+	let icon: string;
+
+	switch(props.category) {
+		case Categories.Colour:
+			icon = "palette";
+			break;
+		case Categories.Shape:
+			icon = "crop_square";
+			break;
+		case Categories.Text:
+			icon = "text_fields";
+			break;
+		default:
+			throw new Error("Unknown category");
+	}
+
 	return (
 		<TouchableOpacity
-			onPress={props.onPress.bind(null, props.option)}
 			style={[
-				styles.CategoryButton,
+				styles.categoryButton,
 				props.selected && { backgroundColor: C.primary }
 			]}
+			onPress={props.onPress.bind(null, props.category)}
 		>
-			<Text style={props.selected && { color: C.textPrimary }}>
-				{ props.option.charAt(0).toUpperCase() + props.option.slice(1) }
+			<Icon
+				color={props.selected ? C.textPrimary : C.textSecondary}
+				name={icon}
+				iconStyle={styles.categoryButtonIcon}
+				size={28}
+			/>
+
+			<Text
+				style={[
+					styles.categoryButtonText,
+					{ color: props.selected ? C.textPrimary : C.textSecondary }
+				]}
+			>
+				{props.category.charAt(0).toUpperCase() + props.category.slice(1)}
 			</Text>
 		</TouchableOpacity>
 	);
 };
 
 const styles = StyleSheet.create({
-	CategoryButton: {
-		alignItems: "flex-end",
+	categoryButton: {
+		alignItems: "center",
 		backgroundColor: C.secondary,
 		borderRadius: 6,
 		height: 80,
-		flexDirection: "row",
-		justifyContent: "center",
-		marginHorizontal: 5,
+		flexDirection: "column",
+		justifyContent: "flex-end",
+		marginHorizontal: 12,
 		padding: 5,
 		width: 60
+	},
+	categoryButtonIcon: {
+		
+	},
+	categoryButtonText: {
+		fontSize: 10,
+		fontWeight: "bold"
 	}
 });
 

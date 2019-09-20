@@ -18,7 +18,6 @@ enum Colours {
 	Snapchat = "#FFFC00",
 	Twitch = "#6441A5",
 	Twitter = "#1DA1F2",
-	White = "#FFFFFF",
 	Youtube = "#FF0000"
 }
 

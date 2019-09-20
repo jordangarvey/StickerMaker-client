@@ -65,11 +65,11 @@ const OptionsContainer: FC<IOptionsContainerProps> = (props) => {
 
 const styles = StyleSheet.create({
 	optionsScrollContainer: {
-		height: 125,
+		height: 150,
 		width: "100%"
 	},
 	optionsContainer: {
-		height: 125,
+		height: 150,
 		width: "100%"
 	}
 });
