@@ -57,19 +57,13 @@ const OptionsContainer: FC<IOptionsContainerProps> = (props) => {
 	}
 
 	return (
-		<View style={styles.optionsContainer}>
-			<ScrollView horizontal={true} style={styles.optionsScrollContainer}>{options}</ScrollView>
-		</View>
+		<ScrollView horizontal={true} style={styles.optionsScrollContainer}>{options}</ScrollView>
 	);
 };
 
 const styles = StyleSheet.create({
 	optionsScrollContainer: {
-		height: 150,
-		width: "100%"
-	},
-	optionsContainer: {
-		height: 150,
+		height: 160,
 		width: "100%"
 	}
 });

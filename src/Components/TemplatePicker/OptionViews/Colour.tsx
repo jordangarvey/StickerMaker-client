@@ -40,11 +40,13 @@ const Shape: FC<IShapeProps> = (props) => (
 	</Fragment>
 );
 
+const colourSize = 60;
 const styles = StyleSheet.create({
 	colour: {
-		borderRadius: 25,
-		height: 50,
-		width: 50
+		borderRadius: colourSize / 2,
+		height: colourSize,
+		marginHorizontal: 15,
+		width: colourSize
 	},
 	selected: {
 		borderColor: C.selected,

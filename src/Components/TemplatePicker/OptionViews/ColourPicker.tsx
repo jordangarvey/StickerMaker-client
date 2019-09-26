@@ -37,8 +37,10 @@ const ColourPicker: FC<IColourPickerProps> = (props) => (
 
 const styles = StyleSheet.create({
 	colourPicker: {
-		height: 100,
-		flexWrap: "wrap"
+		height: "100%",
+		flexDirection: "column",
+		flexWrap: "wrap",
+		justifyContent: "space-evenly"
 	}
 });
 
