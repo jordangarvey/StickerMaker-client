@@ -1,5 +1,5 @@
-import React, { FC, Fragment } from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import React, { FC } from "react";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 import Categories from "../Categories";
 import Colours from "../Colours";
@@ -44,26 +44,23 @@ const Shape: FC<IShapeProps> = (props) => {
 	}
 
 	return (
-		<Fragment>
-			<TouchableOpacity
-				onPress={props.onPress.bind(null, Categories.Shape, props.shape)}
-				style={
-					[
-						{ backgroundColor: props.selectedColour },
-						style,
-						styles.shape,
-						props.selected && styles.selected
-					]
-				}
-			/>
-			<Text>{text}</Text>
-		</Fragment>
+		<TouchableOpacity
+			onPress={props.onPress.bind(null, Categories.Shape, props.shape)}
+			style={
+				[
+					{ backgroundColor: props.selectedColour },
+					style,
+					styles.shape,
+					props.selected && styles.selected
+				]
+			}
+		/>
 	);
 };
 
 const styles = StyleSheet.create({
 	rect: {
-		width: 80
+		width: 120
 	},
 	selected: {
 		borderColor: C.selected,
@@ -71,10 +68,11 @@ const styles = StyleSheet.create({
 	},
 	shape: {
 		borderRadius: 20,
-		height: 50
+		height: 70,
+		marginHorizontal: 15,
 	},
 	square: {
-		width: 50
+		width: 70
 	}
 });
 

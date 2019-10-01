@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from "react";
+import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
 import Categories from "../Categories";
@@ -23,21 +23,19 @@ interface IShapeProps {
 /**
  * Component to render a colour button
  */
-const Shape: FC<IShapeProps> = (props) => (
-	<Fragment>
-		<TouchableOpacity
-			onPress={props.onPress.bind(null, Categories.Colour, props.colour)}
-			style={
-				[
-					{
-						backgroundColor: props.colour
-					},
-					styles.colour,
-					props.selected && styles.selected
-				]
-			}
-		/>
-	</Fragment>
+const Colour: FC<IShapeProps> = (props) => (
+	<TouchableOpacity
+		onPress={props.onPress.bind(null, Categories.Colour, props.colour)}
+		style={
+			[
+				{
+					backgroundColor: props.colour
+				},
+				styles.colour,
+				props.selected && styles.selected
+			]
+		}
+	/>
 );
 
 const colourSize = 60;
@@ -54,4 +52,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default Shape;
+export default Colour;

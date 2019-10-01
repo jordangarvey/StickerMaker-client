@@ -1,5 +1,5 @@
-import React, { FC, Fragment } from "react";
-import { StyleSheet } from "react-native";
+import React, { FC } from "react";
+import { StyleSheet, View } from "react-native";
 
 import Categories from "../Categories";
 import Colours from "../Colours";
@@ -24,7 +24,7 @@ interface IShapePickerProps {
  * Component to render the Shape Picker
  */
 const ShapePicker: FC<IShapePickerProps> = (props) => (
-	<Fragment>
+	<View style={styles.shapePicker}>
 		{
 			Object.keys(Shapes).map((shape: any) => (
 				<Shape
@@ -36,11 +36,17 @@ const ShapePicker: FC<IShapePickerProps> = (props) => (
 				/>
 			))
 		}
-	</Fragment>
+	</View>
 );
 
 const styles = StyleSheet.create({
-	
+	shapePicker: {
+		alignItems: "center",
+		height: "100%",
+		flexDirection: "row",
+		flexWrap: "nowrap",
+		justifyContent: "flex-start"
+	}
 });
 
 export default ShapePicker;

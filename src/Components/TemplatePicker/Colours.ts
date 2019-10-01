@@ -3,7 +3,6 @@
  */
 enum Colours {
 	Airbnb = "#FD5C63",
-	Black = "#000000",
 	Deliveroo = "#00C1B2",
 	Discord = "#7289DA",
 	Dribble = "#EA4C89",

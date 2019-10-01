@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 import Categories from "./Categories";
 import Colours from "./Colours";

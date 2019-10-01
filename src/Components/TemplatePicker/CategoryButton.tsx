@@ -30,10 +30,10 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 			icon = "palette";
 			break;
 		case Categories.Shape:
-			icon = "crop_square";
+			icon = "crop-square";
 			break;
 		case Categories.Text:
-			icon = "text_fields";
+			icon = "text-fields";
 			break;
 		default:
 			throw new Error("Unknown category");
@@ -52,6 +52,7 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 				name={icon}
 				iconStyle={styles.categoryButtonIcon}
 				size={28}
+				type="material"
 			/>
 
 			<Text
