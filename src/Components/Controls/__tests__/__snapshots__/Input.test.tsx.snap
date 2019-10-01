@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Inputcomponent’s snapshot renders as expected 1`] = `
+<TextInput
+  allowFontScaling={true}
+  autoFocus={false}
+  onChangeText={[Function]}
+  rejectResponderTermination={true}
+  returnKeyType="done"
+  style={
+    Object {
+      "borderColor": "gray",
+      "borderWidth": 1,
+      "flex": 1,
+      "height": 40,
+    }
+  }
+  textContentType="none"
+  underlineColorAndroid="transparent"
+  value="Test"
+/>
+`;
