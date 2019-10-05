@@ -18,7 +18,7 @@ describe("The Shape component’s snapshot", () => {
 			<Shape
 				onPress={mockFunction}
 				shape={Shapes.Rect}
-				selectedColour={Colours.Black}
+				selectedColour={Colours.Grey1}
 			/>
 		).toJSON();
 

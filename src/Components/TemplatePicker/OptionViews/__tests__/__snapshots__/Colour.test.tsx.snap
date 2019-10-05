@@ -12,11 +12,12 @@ exports[`The Colour component’s snapshot renders as expected 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#000000",
-      "borderRadius": 25,
-      "height": 50,
+      "backgroundColor": "#333333",
+      "borderRadius": 30,
+      "height": 60,
+      "marginHorizontal": 15,
       "opacity": 1,
-      "width": 50,
+      "width": 60,
     }
   }
 />

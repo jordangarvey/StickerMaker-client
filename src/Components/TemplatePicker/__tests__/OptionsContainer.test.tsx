@@ -18,7 +18,7 @@ describe("The Options Container component’s snapshot", () => {
 			<OptionsContainer
 				currentCategory={Categories.Colour}
 				currentOptions={{
-					colour: Colours.Black,
+					colour: Colours.Grey1,
 					shape: Shapes.Rect,
 					text: "Test"
 				}}

@@ -15,7 +15,7 @@ describe("The Colour Picker component’s snapshot", () => {
 
 		const component = renderer.create(
 			<ColourPicker
-				currentColour={Colours.Black}
+				currentColour={Colours.Grey1}
 				onPress={mockFunction}
 			/>
 		).toJSON();

@@ -11,7 +11,7 @@ describe("The Template Item component’s snapshot", () => {
 	it("renders as expected", () => {
 		const component = renderer.create(
 			<TemplateItem
-				colour={Colours.Black}
+				colour={Colours.Grey1}
 				shape={Shapes.Rect}
 				text="Mock item"
 			/>

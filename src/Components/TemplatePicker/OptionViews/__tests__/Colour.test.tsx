@@ -16,7 +16,7 @@ describe("The Colour component’s snapshot", () => {
 		const component = renderer.create(
 			<Colour
 				onPress={mockFunction}
-				colour={Colours.Black}
+				colour={Colours.Grey1}
 			/>
 		).toJSON();
 
