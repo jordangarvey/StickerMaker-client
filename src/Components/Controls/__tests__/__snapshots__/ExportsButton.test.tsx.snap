@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Exports Button component’s snapshot renders as expected 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 15,
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#18A0FB",
+        "borderBottomLeftRadius": 30,
+        "borderBottomRightRadius": 30,
+        "borderTopLeftRadius": 6,
+        "borderTopRightRadius": 6,
+        "bottom": 20,
+        "flexDirection": "row",
+        "height": 70,
+        "justifyContent": "center",
+        "marginTop": 40,
+        "opacity": 1,
+        "padding": 5,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Copy to clipboard
+    </Text>
+  </View>
+</View>
+`;

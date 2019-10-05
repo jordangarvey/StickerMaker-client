@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Category Button component’s snapshot renders as expected 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": 6,
+      "flexDirection": "row",
+      "height": 80,
+      "justifyContent": "center",
+      "marginHorizontal": 5,
+      "opacity": 1,
+      "padding": 5,
+      "width": 60,
+    }
+  }
+>
+  <Text>
+    Rect
+  </Text>
+</View>
+`;

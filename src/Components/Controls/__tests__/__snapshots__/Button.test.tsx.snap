@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Button component’s snapshot renders as expected 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "borderRadius": 12,
+      "borderWidth": 1,
+      "color": "black",
+      "fontSize": 24,
+      "opacity": 1,
+      "overflow": "hidden",
+      "padding": 12,
+      "textAlign": "center",
+    }
+  }
+>
+  <Text>
+    Test
+  </Text>
+</View>
+`;

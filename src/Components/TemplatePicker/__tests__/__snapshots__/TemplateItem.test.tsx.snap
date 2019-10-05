@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Template Item component’s snapshot renders as expected 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#000000",
+      },
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "justifyContent": "center",
+      },
+      Object {
+        "height": 100,
+        "width": 200,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+      }
+    }
+  >
+    Mock item
+  </Text>
+</View>
+`;
