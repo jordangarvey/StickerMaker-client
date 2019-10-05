@@ -22,10 +22,11 @@ exports[`The Exports Button component’s snapshot renders as expected 1`] = `
       "flexDirection": "row",
       "height": 70,
       "justifyContent": "center",
-      "left": "10%",
+      "marginHorizontal": 5,
+      "marginTop": 40,
       "opacity": 1,
       "padding": 5,
-      "width": "90%",
+      "width": "100%",
     }
   }
 >

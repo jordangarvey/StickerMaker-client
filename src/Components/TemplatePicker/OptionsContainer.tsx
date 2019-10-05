@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import Categories from "./Categories";
 import Colours from "./Colours";
@@ -57,12 +57,12 @@ const OptionsContainer: FC<IOptionsContainerProps> = (props) => {
 	}
 
 	return (
-		<ScrollView horizontal={true} style={styles.optionsScrollContainer}>{options}</ScrollView>
+		<View style={styles.optionsContainer}>{options}</View>
 	);
 };
 
 const styles = StyleSheet.create({
-	optionsScrollContainer: {
+	optionsContainer: {
 		height: 160,
 		width: "100%"
 	}

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 import Categories from "../Categories";
 import Colours from "../Colours";
@@ -21,7 +21,7 @@ interface IColourPickerProps {
  * Component to render the Colour Picker
  */
 const ColourPicker: FC<IColourPickerProps> = (props) => (
-	<View style={styles.colourPicker}>
+	<ScrollView contentContainerStyle={styles.colourPicker} horizontal={true}>
 		{
 			Object.keys(Colours).map((colour: any) => (
 				<Colour
@@ -32,7 +32,7 @@ const ColourPicker: FC<IColourPickerProps> = (props) => (
 				/>
 			))
 		}
-	</View>
+	</ScrollView>
 );
 
 const styles = StyleSheet.create({

@@ -10,6 +10,11 @@ interface IInputProps {
 	onChange(text: string): void;
 	/** The currently selected text */
 	value: string;
+
+	/** Should this input auto focus? */
+	autoFocus?: boolean;
+	/** Optional width for this component */
+	width?: number | string;
 }
 
 /**
@@ -20,7 +25,7 @@ const Input: FC<IInputProps> = (props) => (
 		autoFocus={false}
 		onChangeText={props.onChange}
 		returnKeyType="done"
-		style={styles.input}
+		style={[styles.input, { width: props.width || 200 }]}
 		textContentType="none"
 		value={props.value}
 	/>
@@ -32,8 +37,7 @@ const styles = StyleSheet.create({
 		borderWidth: 1, 
 		fontSize: 14,
 		height: 40,
-		padding: 5,
-		width: "100%"
+		padding: 5
 	}
 });
 

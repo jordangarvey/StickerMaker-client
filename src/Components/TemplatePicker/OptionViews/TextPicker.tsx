@@ -1,5 +1,7 @@
 import React, { FC } from "react";
-import { TextInput, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
+
+import Input from "../../Controls/Input";
 
 
 /**
@@ -16,14 +18,22 @@ interface ITextPickerProps {
  * Component to render the Text Picker
  */
 const TextPicker: FC<ITextPickerProps> = (props) => (
-	<TextInput
-		autoFocus={true}
-		onChangeText={props.onChange}
-		value={props.currentText}
-	/>
+	<View style={styles.textPicker}>
+		<Input
+			onChange={props.onChange}
+			value={props.currentText}
+			width="100%"
+		/>
+	</View>
 );
 
 const styles = StyleSheet.create({
+	textPicker: {
+		justifyContent: "center",
+		height: "100%",
+		paddingHorizontal: 15,
+		width: "100%"
+	}
 });
 
 export default TextPicker;

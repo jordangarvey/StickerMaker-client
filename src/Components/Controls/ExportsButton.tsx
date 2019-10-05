@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import * as C from "../../Global/Colours";
 
@@ -17,12 +17,14 @@ interface IExportsButtonProps {
  */
 const ExportsButton: FC<IExportsButtonProps> = (props) => {
 	return (
-		<TouchableOpacity
-			onPress={props.onCopy}
-			style={styles.exportsButton}
-		>
-			<Text style={styles.buttonText}>Copy to clipboard</Text>
-		</TouchableOpacity>
+		<View style={styles.exportsButtonContainer}>
+			<TouchableOpacity
+				onPress={props.onCopy}
+				style={styles.exportsButton}
+			>
+				<Text style={styles.buttonText}>Copy to clipboard</Text>
+			</TouchableOpacity>
+		</View>
 	);
 };
 
@@ -43,10 +45,12 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		height: 70,
 		justifyContent: "center",
-		left: "10%",
 		marginTop: 40,
 		padding: 5,
-		width: "90%"
+		width: "100%"
+	},
+	exportsButtonContainer: {
+		paddingHorizontal: 15
 	}
 });
 

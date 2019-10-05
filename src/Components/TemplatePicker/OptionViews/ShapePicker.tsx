@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 import Categories from "../Categories";
 import Colours from "../Colours";
@@ -24,7 +24,7 @@ interface IShapePickerProps {
  * Component to render the Shape Picker
  */
 const ShapePicker: FC<IShapePickerProps> = (props) => (
-	<View style={styles.shapePicker}>
+	<ScrollView contentContainerStyle={styles.shapePicker} horizontal={true}>
 		{
 			Object.keys(Shapes).map((shape: any) => (
 				<Shape
@@ -36,7 +36,7 @@ const ShapePicker: FC<IShapePickerProps> = (props) => (
 				/>
 			))
 		}
-	</View>
+	</ScrollView>
 );
 
 const styles = StyleSheet.create({
