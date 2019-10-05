@@ -23,6 +23,9 @@ const TemplateItem: FC<ITemplateItemProps> = (props) => {
 	let shape: object;
 
 	switch(props.shape) {
+		case Shapes.Capsule:
+			shape = styles.capsule;
+			break;
 		case Shapes.Rect:
 			shape = styles.rect;
 			break;
@@ -41,16 +44,22 @@ const TemplateItem: FC<ITemplateItemProps> = (props) => {
 };
 
 const styles = StyleSheet.create({
+	capsule: {
+		borderRadius: 50,
+		height: 100,
+		width: 200
+	},
 	item: {
 		alignItems: "center",
-		borderRadius: 6,
 		justifyContent: "center"
 	},
 	rect: {
+		borderRadius: 6,
 		height: 100,
 		width: 200
 	},
 	square: {
+		borderRadius: 6,
 		height: 200,
 		width: 200
 	},

@@ -28,16 +28,16 @@ interface IShapeProps {
  */
 const Shape: FC<IShapeProps> = (props) => {
 	let style: object;
-	let text: string;
 
 	switch(props.shape) {
+		case Shapes.Capsule:
+			style = styles.capsule;
+			break;
 		case Shapes.Rect:
 			style = styles.rect;
-			text = "Rectangle";
 			break;
 		case Shapes.Square:
 			style = styles.square;
-			text = "Square"
 			break;
 		default:
 			throw new Error("Unknown shape");
@@ -59,7 +59,12 @@ const Shape: FC<IShapeProps> = (props) => {
 };
 
 const styles = StyleSheet.create({
+	capsule: {
+		borderRadius: 80,
+		width: 120
+	},
 	rect: {
+		borderRadius: 20,
 		width: 120
 	},
 	selected: {
@@ -67,11 +72,11 @@ const styles = StyleSheet.create({
 		borderWidth: 5
 	},
 	shape: {
-		borderRadius: 20,
 		height: 70,
 		marginHorizontal: 15,
 	},
 	square: {
+		borderRadius: 20,
 		width: 70
 	}
 });
