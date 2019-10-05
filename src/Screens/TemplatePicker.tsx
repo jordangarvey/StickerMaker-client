@@ -41,7 +41,7 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		// Intitialise the state
 		this.state = {
 			currentOptions: {
-				colour: Colours.Black,
+				colour: Colours.Grey1,
 				shape: Shapes.Rect,
 				text: ""
 			}
