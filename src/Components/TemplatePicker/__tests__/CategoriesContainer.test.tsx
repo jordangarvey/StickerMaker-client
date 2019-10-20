@@ -7,14 +7,8 @@ import CategoriesContainer from "../CategoriesContainer";
 
 describe("The Categories Container component’s snapshot", () => {
 	it("renders as expected", () => {
-		function mockFunction() {
-			console.log("Test")
-		}
-
 		const component = renderer.create(
-			<CategoriesContainer
-				onPress={mockFunction}
-			/>
+			<CategoriesContainer/>
 		).toJSON();
 
 

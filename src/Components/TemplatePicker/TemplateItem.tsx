@@ -1,35 +1,26 @@
-import React, { FC } from "react";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import Shapes from "./Shapes";
+import colours from "../../Data/colours";
+import { useAppContext } from "../../State/AppContext";
 
-
-/**
- * Interface for the Template Item props
- */
-interface ITemplateItemProps {
-	/** The colour of the item */
-	colour: string;
-	/** The shape of the item */
-	shape: Shapes;
-	/** The text of the sticker */
-	text: string;
-}
 
 /**
  * Component to render a Template Item
  */
-const TemplateItem: FC<ITemplateItemProps> = (props) => {
+function TemplateItem() {
+	const [{ values }] = useAppContext();
+
 	let shape: object;
 
-	switch(props.shape) {
-		case Shapes.Capsule:
+	switch(values.shape) {
+		case "Capsule":
 			shape = styles.capsule;
 			break;
-		case Shapes.Rect:
+		case "Rectangle":
 			shape = styles.rect;
 			break;
-		case Shapes.Square:
+		case "Square":
 			shape = styles.square;
 			break;
 		default:
@@ -37,11 +28,11 @@ const TemplateItem: FC<ITemplateItemProps> = (props) => {
 	}
 
 	return (
-		<View style={[{ backgroundColor: props.colour }, styles.item, shape]}>
-			<Text style={styles.text}>{props.text}</Text>
+		<View style={[{ backgroundColor: colours[values.colour] }, styles.item, shape]}>
+			<Text style={styles.text}>{values.text}</Text>
 		</View>
 	);
-};
+}
 
 const styles = StyleSheet.create({
 	capsule: {

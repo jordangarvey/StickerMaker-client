@@ -7,17 +7,9 @@ import TextPicker from "../TextPicker";
 
 describe("The Text Picker component’s snapshot", () => {
 	it("renders as expected", () => {
-		function mockFunction() {
-			console.log("Test")
-		}
-
 		const component = renderer.create(
-			<TextPicker
-				currentText="Test"
-				onChange={mockFunction}
-			/>
+			<TextPicker/>
 		).toJSON();
-
 
 		expect(component).toMatchSnapshot();
 	});

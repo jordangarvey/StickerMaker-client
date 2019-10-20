@@ -1,31 +1,34 @@
 import React, { FC } from "react";
 import { StyleSheet, View } from "react-native";
 
+import { useAppContext } from "../../../State/AppContext";
+
 import Input from "../../Controls/Input";
 
 
 /**
- * Interface for the Text Picker props
- */
-interface ITextPickerProps {
-	/** The currently selected text */
-	currentText: string;
-	/** Callback to be fired whenever the text value is changed */
-	onChange(text: string): void;
-}
-
-/**
  * Component to render the Text Picker
  */
-const TextPicker: FC<ITextPickerProps> = (props) => (
-	<View style={styles.textPicker}>
-		<Input
-			onChange={props.onChange}
-			value={props.currentText}
-			width="100%"
-		/>
-	</View>
-);
+function TextPicker() {
+	const [{ values }, dispatch] = useAppContext();
+
+	function onChange(text: string) {
+		const newValues = values;
+		newValues.text = text;
+
+		dispatch({ type: "updateValues", newValues });
+	}
+
+	return (
+		<View style={styles.textPicker}>
+			<Input
+				onChange={onChange}
+				value={values.text || ""}
+				width="100%"
+			/>
+		</View>
+	);
+}
 
 const styles = StyleSheet.create({
 	textPicker: {

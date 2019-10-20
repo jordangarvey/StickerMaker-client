@@ -3,12 +3,6 @@ import { NativeModules, StyleSheet, View } from "react-native";
 
 import ViewShot from "react-native-view-shot";
 
-import Categories from "../Components/TemplatePicker/Categories";
-import Colours from "../Components/TemplatePicker/Colours";
-import Shapes from "../Components/TemplatePicker/Shapes";
-
-import ISelectedOptions from "../Components/TemplatePicker/ISelectedOptions";
-
 import CategoriesContainer from "../Components/TemplatePicker/CategoriesContainer";
 import ExportsButton from "../Components/Controls/ExportsButton";
 import Header from "../Components/Layout/Header";
@@ -22,11 +16,6 @@ import * as C from "../Global/Colours";
  * Interface for the Template Picker screen state
  */
 interface ITemplatePickerState {
-	/** The currently selected options */
-	currentOptions: ISelectedOptions;
-
-	/** The currently selected category, if any */
-	currentCategory?: Categories;
 	/** Optional error that’s thrown from the component */
 	error?: Error;
 }
@@ -39,19 +28,10 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 		super(props);
 
 		// Intitialise the state
-		this.state = {
-			currentOptions: {
-				colour: Colours.Grey1,
-				shape: Shapes.Rect,
-				text: ""
-			}
-		};
+		this.state = {};
 
 		// Bind this component’s methods
 		this.capture = this.capture.bind(this);
-		this.onCategoryButtonPress = this.onCategoryButtonPress.bind(this);
-		this.onTextValueChange = this.onTextValueChange.bind(this);
-		this.onOptionButtonPress = this.onOptionButtonPress.bind(this);
 	}
 
 	private async capture() {
@@ -66,41 +46,6 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 
 		NativeModules.BetterClipboard.addBase64Image(addBase64Image);
 	}
-	
-	/**
-	 * Method to be fired whenever a category button is pressed
-	 */
-	private onCategoryButtonPress(category: Categories) {
-		const currentCategory = this.state.currentCategory !== category ? category : undefined;
-		this.setState({ currentCategory });
-	}
-
-	/**
-	 * Method to be fired whenever an option button is pressed
-	 */
-	private onOptionButtonPress(category: Categories, option: Colours | Shapes) {
-		const currentOptions = this.state.currentOptions;
-		switch(category) {
-			case Categories.Colour:
-				currentOptions.colour = option as Colours;
-				break;
-			case Categories.Shape:
-				currentOptions.shape = option as Shapes;
-				break;
-		}
-
-		this.setState({ currentOptions });
-	}
-
-	/**
-	 * Method to be fired whenever the text value is changed
-	 */
-	private onTextValueChange(text: string) {
-		const currentOptions = this.state.currentOptions;
-		currentOptions.text = text;
-
-		this.setState({ currentOptions });
-	}
 
 	public render() {
 		return (
@@ -109,29 +54,15 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 
 				<View style={styles.templateItemContainer}>
 					<ViewShot ref="templateItem" options={{ result: "base64" }}>
-						<TemplateItem
-							colour={this.state.currentOptions.colour}
-							shape={this.state.currentOptions.shape}
-							text={this.state.currentOptions.text}
-						/>
+						<TemplateItem/>
 					</ViewShot>
 				</View>
 
 				<View style={styles.bottomContainer}>
-					<CategoriesContainer
-						currentCategory={this.state.currentCategory}
-						onPress={this.onCategoryButtonPress}
-					/>
+					<CategoriesContainer/>
 
 					<View style={styles.bottomSolidContainer}>
-						<OptionsContainer
-							currentCategory={this.state.currentCategory}
-							currentOptions={this.state.currentOptions}
-							onCapture={this.capture}
-							onChange={this.onTextValueChange}
-							onPress={this.onOptionButtonPress}
-						/>
-
+						<OptionsContainer/>
 						<ExportsButton onCopy={this.capture}/>
 					</View>
 				</View>
