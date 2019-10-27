@@ -18,7 +18,7 @@ function OptionsContainer() {
 
 	switch(values.category) {
 		case "colour":
-			optionsPicker = <ColourPicker/>;
+			optionsPicker = <ColourPicker multiline={true} value="colour"/>;
 			break;
 		case "shape":
 			optionsPicker = <ShapePicker/>;

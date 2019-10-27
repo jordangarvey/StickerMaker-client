@@ -13,6 +13,8 @@ import * as C from "../../../Global/Colours";
 interface IShapeProps {
 	/** The colour this component should display as */
 	colour: string;
+	/** The state value to use */
+	value: string;
 }
 
 /**
@@ -23,7 +25,7 @@ function Colour(props: IShapeProps) {
 
 	function onChange() {
 		const newValues = values;
-		newValues.colour = props.colour;
+		newValues[props.value] = props.colour;
 
 		dispatch({ type: "updateValues", newValues });
 	}
@@ -34,23 +36,23 @@ function Colour(props: IShapeProps) {
 			style={
 				[
 					{
-						backgroundColor: colours[props.colour] || "#333333"
+						backgroundColor: colours[props.colour]
 					},
 					styles.colour,
-					(values.colour === props.colour) && styles.selected
+					(values[props.value] === props.colour) && styles.selected
 				]
 			}
 		/>
 	);
 }
 
-const colourSize = 60;
+const size = 60;
 const styles = StyleSheet.create({
 	colour: {
-		borderRadius: colourSize / 2,
-		height: colourSize,
+		borderRadius: size / 2,
+		height: size,
 		marginHorizontal: 15,
-		width: colourSize
+		width: size
 	},
 	selected: {
 		borderColor: C.selected,

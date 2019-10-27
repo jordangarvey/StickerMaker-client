@@ -24,7 +24,8 @@ const categories: ICategories = {
 		name: "Text",
 		subcategories: {
 			textColour: {
-				name: "Text colour"
+				name: "Text colour",
+				options: colours
 			},
 			textSize: {
 				name: "Text size"

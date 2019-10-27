@@ -13,6 +13,8 @@ interface IInputProps {
 
 	/** Should this input auto focus? */
 	autoFocus?: boolean;
+	/** Optional placeholder text */
+	placeholder?: string;
 	/** Optional width for this component */
 	width?: number | string;
 }
@@ -24,6 +26,7 @@ const Input: FC<IInputProps> = (props) => (
 	<TextInput
 		autoFocus={false}
 		onChangeText={props.onChange}
+		placeholder={props.placeholder}
 		returnKeyType="done"
 		style={[styles.input, { width: props.width || 200 }]}
 		textContentType="none"

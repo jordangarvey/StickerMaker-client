@@ -1,9 +1,11 @@
-import React, { FC } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
 
 import { useAppContext } from "../../../State/AppContext";
 
+import ColourPicker from "./ColourPicker";
 import Input from "../../Controls/Input";
+import TextSizePicker from "./TextSizePicker";
 
 
 /**
@@ -23,9 +25,13 @@ function TextPicker() {
 		<View style={styles.textPicker}>
 			<Input
 				onChange={onChange}
+				placeholder="Enter sticker text"
 				value={values.text || ""}
 				width="100%"
 			/>
+
+			<ColourPicker value="textColour"/>
+			<TextSizePicker/>
 		</View>
 	);
 }

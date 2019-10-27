@@ -29,7 +29,7 @@ function TemplateItem() {
 
 	return (
 		<View style={[{ backgroundColor: colours[values.colour] }, styles.item, shape]}>
-			<Text style={styles.text}>{values.text}</Text>
+			<Text style={[styles.text, { color: colours[values.textColour], fontSize: values.textSize }]}>{values.text}</Text>
 		</View>
 	);
 }
@@ -55,8 +55,7 @@ const styles = StyleSheet.create({
 		width: 200
 	},
 	text: {
-		color: "white",
-		fontSize: 20
+		color: "white"
 	}
 });
 

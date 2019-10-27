@@ -17,7 +17,8 @@ const colours: { [key: string]: string; } = {
 	"Snapchat": "#FFFC00",
 	"Twitch": "#6441A5",
 	"Twitter": "#1DA1F2",
-	"Youtube": "#FF0000"
+	"Youtube": "#FF0000",
+	"White": "#FFFFFF"
 };
 
 export default colours;
