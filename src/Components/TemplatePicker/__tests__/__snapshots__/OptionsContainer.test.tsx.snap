@@ -4,22 +4,21 @@ exports[`The Options Container component’s snapshot renders as expected 1`] = 
 <View
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
-      "borderColor": "#000000",
-      "borderWidth": 0.5,
-      "height": 300,
+      "height": 160,
       "width": "100%",
     }
   }
 >
   <RCTScrollView
-    horizontal={true}
-    style={
+    contentContainerStyle={
       Object {
-        "height": 200,
-        "width": "100%",
+        "flexDirection": "column",
+        "flexWrap": "wrap",
+        "height": "100%",
+        "justifyContent": "space-evenly",
       }
     }
+    horizontal={true}
   >
     <View>
       <View
@@ -33,13 +32,92 @@ exports[`The Options Container component’s snapshot renders as expected 1`] = 
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": "#000000",
-            "borderColor": "green",
-            "borderRadius": 25,
-            "borderWidth": 3,
-            "height": 50,
+            "backgroundColor": "#FD5C63",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
             "opacity": 1,
-            "width": 50,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#00C1B2",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#7289DA",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#EA4C89",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3B5998",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
           }
         }
       />
@@ -55,53 +133,217 @@ exports[`The Options Container component’s snapshot renders as expected 1`] = 
         style={
           Object {
             "backgroundColor": "#333333",
-            "borderRadius": 25,
-            "height": 50,
+            "borderColor": "#333333",
+            "borderRadius": 30,
+            "borderWidth": 5,
+            "height": 60,
+            "marginHorizontal": 15,
             "opacity": 1,
-            "width": 50,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#E1306C",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#0077b5",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#E0393E",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#00AB6C",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#0084FF",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#BD081C",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFFC00",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#6441A5",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1DA1F2",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FF0000",
+            "borderRadius": 30,
+            "height": 60,
+            "marginHorizontal": 15,
+            "opacity": 1,
+            "width": 60,
           }
         }
       />
     </View>
   </RCTScrollView>
-  <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#18A0FB",
-        "borderBottomLeftRadius": 30,
-        "borderBottomRightRadius": 30,
-        "borderTopLeftRadius": 6,
-        "borderTopRightRadius": 6,
-        "flexDirection": "row",
-        "height": 70,
-        "justifyContent": "center",
-        "marginHorizontal": 20,
-        "opacity": 1,
-        "padding": 5,
-        "width": "100%",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 16,
-          "fontWeight": "bold",
-        }
-      }
-    >
-      Export to camera roll
-    </Text>
-  </View>
 </View>
 `;

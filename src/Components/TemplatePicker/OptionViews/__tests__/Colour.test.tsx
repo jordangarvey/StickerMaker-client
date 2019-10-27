@@ -2,8 +2,6 @@ import React from "react";
 
 import renderer from "react-test-renderer";
 
-import Colours from "../../Colours";
-
 import Colour from "../Colour";
 
 
@@ -15,8 +13,7 @@ describe("The Colour component’s snapshot", () => {
 
 		const component = renderer.create(
 			<Colour
-				onPress={mockFunction}
-				colour={Colours.Black}
+				colour="Grey1"
 			/>
 		).toJSON();
 

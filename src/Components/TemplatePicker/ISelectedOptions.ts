@@ -1,5 +1,5 @@
-import Shapes from "./Shapes";
-import Colours from "./Colours";
+import Shapes from "../../Data/shapes";
+import Colours from "../../Data/colours";
 
 
 interface ISelectedOptions {

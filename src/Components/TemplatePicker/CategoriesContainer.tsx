@@ -1,32 +1,19 @@
 import React, { FC } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
-import Categories from "./Categories";
+import categories from "../../Data/categories";
 
 import CategoryButton from "./CategoryButton";
 
 
-/**
- * Interface for the Categories Container props
- */
-interface ICategoriesContainerProps {
-	/** Callback to be fired whenever the option button is pressed */
-	onPress(category: Categories): void;
-
-	/** The currently selected category */
-	currentCategory?: Categories;
-}
-
-const CategoriesContainer: FC<ICategoriesContainerProps> = (props) => (
+const CategoriesContainer: FC = () => (
 	<View style={styles.categoriesContainer}>
 		<ScrollView horizontal={true}>
 			{
-				Object.keys(Categories).map((category: any) => (
+				Object.keys(categories).map(category => (
 					<CategoryButton
-						key={Categories[category]}
-						category={Categories[category] as Categories}
-						onPress={props.onPress}
-						selected={Categories[category] === props.currentCategory}
+						key={category}
+						category={category}
 					/>
 				))
 			}

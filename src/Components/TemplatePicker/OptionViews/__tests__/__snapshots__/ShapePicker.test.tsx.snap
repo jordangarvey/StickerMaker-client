@@ -1,52 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The Shape Picker component’s snapshot renders as expected 1`] = `
-Array [
-  <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "backgroundColor": "#000000",
-        "borderRadius": 20,
-        "height": 50,
-        "opacity": 1,
-        "width": 50,
-      }
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "flexWrap": "nowrap",
+      "height": "100%",
+      "justifyContent": "flex-start",
     }
-  />,
-  <Text>
-    Square
-  </Text>,
-  <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "backgroundColor": "#000000",
-        "borderColor": "green",
-        "borderRadius": 20,
-        "borderWidth": 3,
-        "height": 50,
-        "opacity": 1,
-        "width": 80,
+  }
+  horizontal={true}
+>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#333333",
+          "borderRadius": 80,
+          "height": 70,
+          "marginHorizontal": 15,
+          "opacity": 1,
+          "width": 120,
+        }
       }
-    }
-  />,
-  <Text>
-    Rectangle
-  </Text>,
-]
+    />
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#333333",
+          "borderColor": "#333333",
+          "borderRadius": 20,
+          "borderWidth": 5,
+          "height": 70,
+          "marginHorizontal": 15,
+          "opacity": 1,
+          "width": 120,
+        }
+      }
+    />
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#333333",
+          "borderRadius": 20,
+          "height": 70,
+          "marginHorizontal": 15,
+          "opacity": 1,
+          "width": 70,
+        }
+      }
+    />
+  </View>
+</RCTScrollView>
 `;

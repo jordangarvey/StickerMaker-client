@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-import Categories from "../Categories";
-import Colours from "../Colours";
+import colours from "../../../Data/colours";
+import { useAppContext } from "../../../State/AppContext";
 
 import * as C from "../../../Global/Colours";
 
@@ -11,40 +11,48 @@ import * as C from "../../../Global/Colours";
  * Interface for the Colour component
  */
 interface IShapeProps {
-	/** Callback to be fired whenever a shape option is pressed */
-	onPress(category: Categories, option: Colours): void;
-	/** The shape this component should display as */
-	colour: Colours;
-
-	/** Optional boolean option value if this shape is selected */
-	selected?: boolean;
+	/** The colour this component should display as */
+	colour: string;
+	/** The state value to use */
+	value: string;
 }
 
 /**
  * Component to render a colour button
  */
-const Colour: FC<IShapeProps> = (props) => (
-	<TouchableOpacity
-		onPress={props.onPress.bind(null, Categories.Colour, props.colour)}
-		style={
-			[
-				{
-					backgroundColor: props.colour
-				},
-				styles.colour,
-				props.selected && styles.selected
-			]
-		}
-	/>
-);
+function Colour(props: IShapeProps) {
+	const [{ values }, dispatch] = useAppContext();
 
-const colourSize = 60;
+	function onChange() {
+		const newValues = values;
+		newValues[props.value] = props.colour;
+
+		dispatch({ type: "updateValues", newValues });
+	}
+
+	return (
+		<TouchableOpacity
+			onPress={onChange}
+			style={
+				[
+					{
+						backgroundColor: colours[props.colour]
+					},
+					styles.colour,
+					(values[props.value] === props.colour) && styles.selected
+				]
+			}
+		/>
+	);
+}
+
+const size = 60;
 const styles = StyleSheet.create({
 	colour: {
-		borderRadius: colourSize / 2,
-		height: colourSize,
+		borderRadius: size / 2,
+		height: size,
 		marginHorizontal: 15,
-		width: colourSize
+		width: size
 	},
 	selected: {
 		borderColor: C.selected,

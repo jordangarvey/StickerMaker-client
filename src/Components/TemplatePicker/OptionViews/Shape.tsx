@@ -1,9 +1,10 @@
-import React, { FC } from "react";
+import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-import Categories from "../Categories";
-import Colours from "../Colours";
-import Shapes from "../Shapes";
+import colours from "../../../Data/colours";
+import shapes from "../../../Data/shapes";
+import { useAppContext } from "../../../State/AppContext";
+
 
 import * as C from "../../../Global/Colours";
 
@@ -12,32 +13,34 @@ import * as C from "../../../Global/Colours";
  * Interface for the Shape component
  */
 interface IShapeProps {
-	/** Callback to be fired whenever a shape option is pressed */
-	onPress(category: Categories, option: Shapes): void;
 	/** The shape this component should display as */
-	shape: Shapes;
-	/** The currently selected colour, to use as the preview colour */
-	selectedColour: Colours;
-
-	/** Optional boolean option value if this shape is selected */
-	selected?: boolean;
+	shape: string;
 }
 
 /**
  * Component to render a shape button
  */
-const Shape: FC<IShapeProps> = (props) => {
+function Shape(props: IShapeProps) {
+	const [{ values }, dispatch] = useAppContext();
+
+	function onChange() {
+		const newValues = values;
+		newValues.shape = props.shape;
+
+		dispatch({ type: "updateValues", newValues });
+	}
+
 	let style: object;
-	let text: string;
 
 	switch(props.shape) {
-		case Shapes.Rect:
-			style = styles.rect;
-			text = "Rectangle";
+		case "Capsule":
+			style = styles.capsule;
 			break;
-		case Shapes.Square:
+		case "Rectangle":
+			style = styles.rect;
+			break;
+		case "Square":
 			style = styles.square;
-			text = "Square"
 			break;
 		default:
 			throw new Error("Unknown shape");
@@ -45,21 +48,26 @@ const Shape: FC<IShapeProps> = (props) => {
 
 	return (
 		<TouchableOpacity
-			onPress={props.onPress.bind(null, Categories.Shape, props.shape)}
+			onPress={onChange}
 			style={
 				[
-					{ backgroundColor: props.selectedColour },
+					{ backgroundColor: colours[values.colour] || "#333333" },
 					style,
 					styles.shape,
-					props.selected && styles.selected
+					(values.shape === props.shape) && styles.selected
 				]
 			}
 		/>
 	);
-};
+}
 
 const styles = StyleSheet.create({
+	capsule: {
+		borderRadius: 80,
+		width: 120
+	},
 	rect: {
+		borderRadius: 20,
 		width: 120
 	},
 	selected: {
@@ -67,11 +75,11 @@ const styles = StyleSheet.create({
 		borderWidth: 5
 	},
 	shape: {
-		borderRadius: 20,
 		height: 70,
 		marginHorizontal: 15,
 	},
 	square: {
+		borderRadius: 20,
 		width: 70
 	}
 });

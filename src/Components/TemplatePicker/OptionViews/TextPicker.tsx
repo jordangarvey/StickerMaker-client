@@ -1,37 +1,47 @@
-import React, { FC } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
 
+import { useAppContext } from "../../../State/AppContext";
+
+import ColourPicker from "./ColourPicker";
 import Input from "../../Controls/Input";
+import TextSizePicker from "./TextSizePicker";
 
-
-/**
- * Interface for the Text Picker props
- */
-interface ITextPickerProps {
-	/** The currently selected text */
-	currentText: string;
-	/** Callback to be fired whenever the text value is changed */
-	onChange(text: string): void;
-}
 
 /**
  * Component to render the Text Picker
  */
-const TextPicker: FC<ITextPickerProps> = (props) => (
-	<View style={styles.textPicker}>
-		<Input
-			onChange={props.onChange}
-			value={props.currentText}
-			width="100%"
-		/>
-	</View>
-);
+function TextPicker() {
+	const [{ values }, dispatch] = useAppContext();
+
+	function onChange(text: string) {
+		const newValues = values;
+		newValues.text = text;
+
+		dispatch({ type: "updateValues", newValues });
+	}
+
+	return (
+		<View style={styles.textPicker}>
+			<Input
+				onChange={onChange}
+				placeholder="Enter sticker text"
+				value={values.text || ""}
+				width="100%"
+			/>
+
+			<ColourPicker value="textColour"/>
+			<TextSizePicker/>
+		</View>
+	);
+}
 
 const styles = StyleSheet.create({
 	textPicker: {
 		justifyContent: "center",
 		height: "100%",
 		paddingHorizontal: 15,
+		paddingTop: 10,
 		width: "100%"
 	}
 });

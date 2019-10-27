@@ -5,14 +5,14 @@ exports[`The Template Item component’s snapshot renders as expected 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "#000000",
+        "backgroundColor": "#333333",
       },
       Object {
         "alignItems": "center",
-        "borderRadius": 6,
         "justifyContent": "center",
       },
       Object {
+        "borderRadius": 6,
         "height": 100,
         "width": 200,
       },
@@ -23,6 +23,7 @@ exports[`The Template Item component’s snapshot renders as expected 1`] = `
     style={
       Object {
         "color": "white",
+        "fontSize": 20,
       }
     }
   >

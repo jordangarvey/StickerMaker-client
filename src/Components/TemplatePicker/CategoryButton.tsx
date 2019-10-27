@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import { Icon } from "react-native-elements";
+import { useAppContext } from "../../State/AppContext";
 
-import Categories from "./Categories";
+import { Icon } from "react-native-elements";
 
 import * as C from "../../Global/Colours";
 
@@ -13,42 +13,48 @@ import * as C from "../../Global/Colours";
  */
 interface ICategoryButtonProps {
 	/** The currently selected category this option belongs to e.g. shapes, text */
-	category: Categories;
-	/** On press callback to be fired whenever the option button is pressed */
-	onPress(category: Categories): void;
-
-	/** Optional boolean for whether or not this option is currently selected */
-	selected?: boolean;
+	category: string;
 }
 
 
 const CategoryButton: FC<ICategoryButtonProps> = (props) => {
+	const [{ values }, dispatch] = useAppContext();
+
+	function onChange() {
+		const newValues = values;
+		newValues.category = props.category;
+
+		dispatch({ type: "updateCategory", newValues });
+	}
+
 	let icon: string;
 
 	switch(props.category) {
-		case Categories.Colour:
+		case "colour":
 			icon = "palette";
 			break;
-		case Categories.Shape:
+		case "shape":
 			icon = "crop-square";
 			break;
-		case Categories.Text:
+		case "text":
 			icon = "text-fields";
 			break;
 		default:
 			throw new Error("Unknown category");
 	}
 
+	const selected = (props.category === values.category);
+
 	return (
 		<TouchableOpacity
 			style={[
 				styles.categoryButton,
-				props.selected && { backgroundColor: C.primary }
+				selected && { backgroundColor: C.primary }
 			]}
-			onPress={props.onPress.bind(null, props.category)}
+			onPress={onChange}
 		>
 			<Icon
-				color={props.selected ? C.textPrimary : C.textSecondary}
+				color={selected ? C.textPrimary : C.textSecondary}
 				name={icon}
 				iconStyle={styles.categoryButtonIcon}
 				size={28}
@@ -58,7 +64,7 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 			<Text
 				style={[
 					styles.categoryButtonText,
-					{ color: props.selected ? C.textPrimary : C.textSecondary }
+					{ color: selected ? C.textPrimary : C.textSecondary }
 				]}
 			>
 				{props.category.charAt(0).toUpperCase() + props.category.slice(1)}
