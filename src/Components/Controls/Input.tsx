@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { TextInput, StyleSheet } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 
 
 /**
@@ -23,24 +23,24 @@ interface IInputProps {
  * Component to render the Input component
  */
 const Input: FC<IInputProps> = (props) => (
-	<TextInput
-		autoFocus={false}
-		onChangeText={props.onChange}
-		placeholder={props.placeholder}
-		returnKeyType="done"
-		style={[styles.input, { width: props.width || 200 }]}
-		textContentType="none"
-		value={props.value}
-	/>
+	<View style={[styles.input, { width: props.width || 200 }]}>
+		<TextInput
+			autoFocus={false}
+			onChangeText={props.onChange}
+			placeholder={props.placeholder}
+			returnKeyType="done"
+			textContentType="none"
+			value={props.value}
+		/>
+	</View>
 );
 
 const styles = StyleSheet.create({
 	input: {
-		borderColor: "gray",
-		borderWidth: 1, 
+		borderBottomColor: "gray",
+		borderBottomWidth: 1,
 		fontSize: 14,
-		height: 40,
-		padding: 5
+		height: 30
 	}
 });
 
