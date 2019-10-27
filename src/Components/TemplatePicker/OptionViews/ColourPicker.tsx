@@ -9,9 +9,6 @@ import Colour from "./Colour";
 interface IColourPickerProps {
 	/** The state value to use */
 	value: string;
-
-	/** Should this component render over multiple lines */
-	multiline?: boolean;
 }
 
 /**
