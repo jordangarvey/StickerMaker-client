@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import { useAppContext } from "../../State/AppContext";
-
 import { Icon } from "react-native-elements";
+
+import { useAppContext } from "../../State/AppContext";
 
 import * as C from "../../Global/Colours";
 
@@ -18,13 +18,10 @@ interface ICategoryButtonProps {
 
 
 const CategoryButton: FC<ICategoryButtonProps> = (props) => {
-	const [{ values }, dispatch] = useAppContext();
+	const [{ currentCategory }, dispatch] = useAppContext();
 
 	function onChange() {
-		const newValues = values;
-		newValues.category = props.category;
-
-		dispatch({ type: "updateCategory", newValues });
+		dispatch({ payload: props.category, type: "updateCategory" });
 	}
 
 	let icon: string;
@@ -43,7 +40,7 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 			throw new Error("Unknown category");
 	}
 
-	const selected = (props.category === values.category);
+	const selected = (props.category === currentCategory);
 
 	return (
 		<TouchableOpacity

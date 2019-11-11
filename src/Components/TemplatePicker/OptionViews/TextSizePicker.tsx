@@ -9,11 +9,10 @@ function TextSizePicker() {
 	const [{ values }, dispatch] = useAppContext();
 
 	function onChange(value: number) {
-		console.log(value);
 		const newValues = values;
 		newValues.textSize = value;
 
-		dispatch({ type: "updateValues", newValues });
+		dispatch({ payload: newValues, type: "updateValues" });
 	}
 
 	return (

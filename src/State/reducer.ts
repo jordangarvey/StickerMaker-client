@@ -1,9 +1,9 @@
 import IAppContext from "./IAppContext";
 
 
-interface IAction {
+export interface IAction {
+	payload: any;
 	type: "updateCategory" | "updateValues";
-	[key: string]: string;
 }
 
 const reducer = (state: IAppContext, action: IAction) => {
@@ -11,12 +11,12 @@ const reducer = (state: IAppContext, action: IAction) => {
 		case "updateCategory":
 			return {
 				...state,
-				category: action.newCategory
+				currentCatergory: action.payload
 			}
 		case "updateValues":
 			return {
 				...state,
-				values: action.newValues
+				values: action.payload
 			}
 		default:
 			return state;

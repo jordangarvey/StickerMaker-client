@@ -27,7 +27,7 @@ function Shape(props: IShapeProps) {
 		const newValues = values;
 		newValues.shape = props.shape;
 
-		dispatch({ type: "updateValues", newValues });
+		dispatch({ payload: newValues, type: "updateValues" });
 	}
 
 	let style: object;

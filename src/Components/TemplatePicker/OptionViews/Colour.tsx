@@ -27,7 +27,7 @@ function Colour(props: IShapeProps) {
 		const newValues = values;
 		newValues[props.value] = props.colour;
 
-		dispatch({ type: "updateValues", newValues });
+		dispatch({ payload: newValues, type: "updateValues" });
 	}
 
 	return (

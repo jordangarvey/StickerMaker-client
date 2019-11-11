@@ -18,7 +18,7 @@ function TextPicker() {
 		const newValues = values;
 		newValues.text = text;
 
-		dispatch({ type: "updateValues", newValues });
+		dispatch({ payload: newValues, type: "updateValues" });
 	}
 
 	return (
