@@ -11,13 +11,15 @@ const reducer = (state: IAppContext, action: IAction) => {
 		case "updateCategory":
 			return {
 				...state,
-				currentCatergory: action.payload
-			}
+				currentCategory: action.payload
+			};
+
 		case "updateValues":
 			return {
 				...state,
 				values: action.payload
-			}
+			};
+
 		default:
 			return state;
 	}
