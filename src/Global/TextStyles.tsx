@@ -17,7 +17,7 @@ interface ITextStylesProps {
  * Global component for the text body
  */
 export const TextBody: FC<ITextStylesProps> = (props) => (
-	<Text onPress={ props.onPress } style={ [Styles.textBodyStyles, props.style] }>{ props.children }</Text>
+	<Text onPress={props.onPress} style={[Styles.textBodyStyles, props.style]}>{props.children}</Text>
 );
 
 /**

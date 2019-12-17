@@ -14,7 +14,7 @@ interface IColourPickerProps {
 /**
  * Component to render the Colour Picker
  */
-const ColourPicker: FC<IColourPickerProps> = (props ) => (
+const ColourPicker: FC<IColourPickerProps> = (props) => (
 	<ScrollView contentContainerStyle={styles.colourPicker} horizontal={true}>
 		{
 			Object.keys(colours).map(colour => (
