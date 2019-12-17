@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 import { useAppContext } from "../../State/AppContext";
 
 import ColourPicker from "./OptionViews/ColourPicker";
+import ShadowPicker from "./OptionViews/ShadowPicker";
 import ShapePicker from "./OptionViews/ShapePicker";
 import TextPicker from "./OptionViews/TextPicker";
 
@@ -12,20 +13,30 @@ import TextPicker from "./OptionViews/TextPicker";
  * Component to render the Options Container
  */
 function OptionsContainer() {
-	const [{ values }] = useAppContext();
+	const [{ currentCategory }] = useAppContext();
 
 	let optionsPicker: JSX.Element | null = null;
 
-	switch(values.category) {
+	switch(currentCategory) {
 		case "colour":
 			optionsPicker = <ColourPicker value="colour"/>;
-			break;
+		break;
+
+		case "outline":
+			optionsPicker = <ColourPicker value="outline"/>;
+		break;
+
+		case "shadow":
+				optionsPicker = <ShadowPicker/>;
+		break;
+
 		case "shape":
 			optionsPicker = <ShapePicker/>;
-			break;
+		break;
+
 		case "text":
 			optionsPicker = <TextPicker/>;
-			break;
+		break;
 	}
 
 	return (
@@ -34,7 +45,7 @@ function OptionsContainer() {
 }
 
 const styles = StyleSheet.create({
-	optionsContainer: {
+	optionsContainer: { 
 		height: 160,
 		width: "100%"
 	}

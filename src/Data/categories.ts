@@ -16,6 +16,13 @@ const categories: ICategories = {
 		name: "Colour",
 		options: colours
 	},
+	outline: {
+		name: "Outline",
+		options: colours
+	},
+	shadow: {
+		name: "Shadow"
+	},
 	shape: {
 		name: "Shape",
 		options: shapes

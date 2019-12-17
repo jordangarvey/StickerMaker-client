@@ -28,7 +28,20 @@ function TemplateItem() {
 	}
 
 	return (
-		<View style={[{ backgroundColor: colours[values.colour] }, styles.item, shape]}>
+		<View
+			style={[
+				{
+					backgroundColor: colours[values.colour],
+					borderColor: colours[values.outline],
+					borderWidth: values.outline && 10,
+					shadowOpacity: values.shadow ? 0.5 : undefined,
+					shadowColor: "black",
+					shadowOffset: { height: values.shadow }
+				},
+				styles.item,
+				shape
+			]}
+		>
 			<Text style={[styles.text, { color: colours[values.textColour], fontSize: values.textSize }]}>{values.text}</Text>
 		</View>
 	);

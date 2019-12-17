@@ -20,7 +20,7 @@ interface ICategoryButtonProps {
 const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 	const [{ currentCategory }, dispatch] = useAppContext();
 
-	function onChange() {
+	function onPress() {
 		dispatch({ payload: props.category, type: "updateCategory" });
 	}
 
@@ -29,13 +29,24 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 	switch(props.category) {
 		case "colour":
 			icon = "palette";
-			break;
+		break;
+
+		case "outline":
+			icon = "palette";
+		break;
+
+		case "shadow":
+			icon = "crop-square";
+		break;
+
 		case "shape":
 			icon = "crop-square";
-			break;
+		break;
+
 		case "text":
 			icon = "text-fields";
-			break;
+		break;
+
 		default:
 			throw new Error("Unknown category");
 	}
@@ -48,7 +59,7 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 				styles.categoryButton,
 				selected && { backgroundColor: C.primary }
 			]}
-			onPress={onChange}
+			onPress={onPress}
 		>
 			<Icon
 				color={selected ? C.textPrimary : C.textSecondary}

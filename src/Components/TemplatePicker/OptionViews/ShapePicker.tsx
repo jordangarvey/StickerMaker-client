@@ -9,7 +9,7 @@ import Shape from "./Shape";
 /**
  * Component to render the Shape Picker
  */
-const ShapePicker: FC = (props) => (
+const ShapePicker: FC = () => (
 	<ScrollView contentContainerStyle={styles.shapePicker} horizontal={true}>
 		{
 			Object.keys(shapes).map(shape => (
