@@ -18,7 +18,15 @@ const categories: ICategories = {
 	},
 	outline: {
 		name: "Outline",
-		options: colours
+		subcategories: {
+			outlineColour: {
+				name: "Outline colour",
+				options: colours
+			},
+			outlineSize: {
+				name: "Outline size"
+			}
+		}
 	},
 	shadow: {
 		name: "Shadow"

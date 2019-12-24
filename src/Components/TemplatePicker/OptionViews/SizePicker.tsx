@@ -5,12 +5,20 @@ import { Slider } from "react-native-elements";
 import { useAppContext } from "../../../State/AppContext";
 
 
-function TextSizePicker() {
+
+interface ISizePickerProps {
+	maxiumumValue: number;
+	minimumValue: number;
+	/** The state value to use */
+	value: string;
+}
+
+function SizePicker(props: ISizePickerProps) {
 	const [{ values }, dispatch] = useAppContext();
 
 	function onChange(value: number) {
 		const newValues = values;
-		newValues.textSize = value;
+		newValues[props.value] = value;
 
 		dispatch({ payload: newValues, type: "updateValues" });
 	}
@@ -18,11 +26,11 @@ function TextSizePicker() {
 	return (
 		<Slider
 			onValueChange={onChange}
-			minimumValue={10}
-			maximumValue={30}
-			value={values.textSize}
+			maximumValue={props.maxiumumValue}
+			minimumValue={props.minimumValue}
+			value={values[props.value]}
 		/>
 	);
 }
 
-export default TextSizePicker;
+export default SizePicker;

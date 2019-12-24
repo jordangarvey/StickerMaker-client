@@ -5,7 +5,7 @@ import { useAppContext } from "../../../State/AppContext";
 
 import ColourPicker from "./ColourPicker";
 import Input from "../../Controls/Input";
-import TextSizePicker from "./TextSizePicker";
+import SizePicker from "./SizePicker";
 
 
 /**
@@ -31,7 +31,7 @@ function TextPicker() {
 			/>
 
 			<ColourPicker value="textColour"/>
-			<TextSizePicker/>
+			<SizePicker maxiumumValue={30} minimumValue={10} value="textSize"/>
 		</View>
 	);
 }

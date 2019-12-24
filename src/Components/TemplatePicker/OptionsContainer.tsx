@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 import { useAppContext } from "../../State/AppContext";
 
 import ColourPicker from "./OptionViews/ColourPicker";
+import OutlinePicker from "./OptionViews/OutlinePicker";
 import ShadowPicker from "./OptionViews/ShadowPicker";
 import ShapePicker from "./OptionViews/ShapePicker";
 import TextPicker from "./OptionViews/TextPicker";
@@ -23,7 +24,7 @@ function OptionsContainer() {
 		break;
 
 		case "outline":
-			optionsPicker = <ColourPicker value="outline"/>;
+			optionsPicker = <OutlinePicker/>;
 		break;
 
 		case "shadow":

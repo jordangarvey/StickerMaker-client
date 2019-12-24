@@ -32,8 +32,8 @@ function TemplateItem() {
 			style={[
 				{
 					backgroundColor: colours[values.colour],
-					borderColor: colours[values.outline],
-					borderWidth: values.outline && 10,
+					borderColor: colours[values.outlineColour],
+					borderWidth: values.outlineSize,
 					shadowOpacity: values.shadow ? 0.5 : undefined,
 					shadowColor: "black",
 					shadowOffset: { height: values.shadow }

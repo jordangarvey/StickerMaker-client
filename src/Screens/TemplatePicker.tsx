@@ -89,8 +89,11 @@ const styles = StyleSheet.create({
 		backgroundColor: C.background
 	},
 	templateItemContainer: {
+		alignItems: "center",
 		alignSelf: "center",
-		top: 200
+		bottom: 295,
+		justifyContent: "center",
+		top: 100
 	}
 });
 
