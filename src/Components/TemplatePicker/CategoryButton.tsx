@@ -32,11 +32,11 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 		break;
 
 		case "outline":
-			icon = "palette";
+			icon = "border-style";
 		break;
 
 		case "shadow":
-			icon = "crop-square";
+			icon = "brightness-4";
 		break;
 
 		case "shape":
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 		borderRadius: 6,
 		height: 80,
 		flexDirection: "column",
-		justifyContent: "flex-end",
+		justifyContent: "space-around",
 		marginHorizontal: 12,
 		padding: 5,
 		width: 60
