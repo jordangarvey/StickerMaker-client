@@ -37,7 +37,7 @@ class TemplatePicker extends Component<any, ITemplatePickerState> {
 	private async capture() {
 		let addBase64Image: string;
 		try {
-			base64Image = await this.refs.templateItem.capture();
+			addBase64Image = await this.refs.templateItem.capture();
 		} catch(error) {
 			console.error(error);
 			this.setState({ error });
