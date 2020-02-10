@@ -1,9 +1,6 @@
 interface ICategory {
 	name: string;
-
-	currentValue?: any;
-	options?: { [key: string]: string };
-	subcategories?: { [key: string]: ICategory; };
+	options: { [key: string]: string; };
 }
 
 export default ICategory;

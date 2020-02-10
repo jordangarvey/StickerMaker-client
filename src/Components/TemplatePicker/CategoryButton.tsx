@@ -1,18 +1,16 @@
 import React, { FC } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import { Icon } from "react-native-elements";
-
 import { useAppContext } from "../../State/AppContext";
 
 import * as C from "../../Global/Colours";
 
 
 /**
- * Interface for the Category props
+ * Interface for the Category Button props
  */
 interface ICategoryButtonProps {
-	/** The currently selected category this option belongs to e.g. shapes, text */
+	/** The currently selected category this button belongs to e.g. shapes, text */
 	category: string;
 }
 
@@ -21,34 +19,15 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 	const [{ currentCategory }, dispatch] = useAppContext();
 
 	function onPress() {
-		dispatch({ payload: props.category, type: "updateCategory" });
-	}
+		dispatch({
+			payload: undefined,
+			type: "updateOption"
+		});
 
-	let icon: string;
-
-	switch(props.category) {
-		case "colour":
-			icon = "palette";
-		break;
-
-		case "outline":
-			icon = "border-style";
-		break;
-
-		case "shadow":
-			icon = "brightness-4";
-		break;
-
-		case "shape":
-			icon = "crop-square";
-		break;
-
-		case "text":
-			icon = "text-fields";
-		break;
-
-		default:
-			throw new Error("Unknown category");
+		dispatch({
+			payload: currentCategory !== props.category ? props.category : undefined,
+			type: "updateCategory"
+		});
 	}
 
 	const selected = (props.category === currentCategory);
@@ -61,14 +40,6 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 			]}
 			onPress={onPress}
 		>
-			<Icon
-				color={selected ? C.textPrimary : C.textSecondary}
-				name={icon}
-				iconStyle={styles.categoryButtonIcon}
-				size={28}
-				type="material"
-			/>
-
 			<Text
 				style={[
 					styles.categoryButtonText,
@@ -82,22 +53,19 @@ const CategoryButton: FC<ICategoryButtonProps> = (props) => {
 };
 
 const styles = StyleSheet.create({
-	categoryButton: {
+	categoryButton: {  
 		alignItems: "center",
-		backgroundColor: C.secondary,
+		backgroundColor: C.background,
 		borderRadius: 6,
-		height: 80,
+		height: 50,
 		flexDirection: "column",
 		justifyContent: "space-around",
-		marginHorizontal: 12,
+		margin: 12,
 		padding: 5,
-		width: 60
-	},
-	categoryButtonIcon: {
-		
+		width: 115
 	},
 	categoryButtonText: {
-		fontSize: 10,
+		fontSize: 14,
 		fontWeight: "bold"
 	}
 });

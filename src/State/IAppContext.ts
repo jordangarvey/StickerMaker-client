@@ -4,6 +4,9 @@ interface IAppContext {
 
 	/** The currently selected category, if any */
 	currentCategory?: string;
+
+	/** The currently selected option, if any */
+	currentOption?: string;
 }
 
 export default IAppContext;

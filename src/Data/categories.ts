@@ -1,8 +1,5 @@
 import ICategory from "../Services/Models/ICategory";
 
-import colours from "./colours";
-import shapes from "./shapes";
-
 
 interface ICategories {
 	[key: string]: ICategory;
@@ -14,37 +11,35 @@ interface ICategories {
 const categories: ICategories = {
 	colour: {
 		name: "Colour",
-		options: colours
+		options: {
+			colour: "Colour"
+		}
 	},
 	outline: {
 		name: "Outline",
-		subcategories: {
-			outlineColour: {
-				name: "Outline colour",
-				options: colours
-			},
-			outlineSize: {
-				name: "Outline size"
-			}
+		options: {
+			outlineColour: "Outline colour",
+			outlineSize: "Outline size"
 		}
 	},
 	shadow: {
-		name: "Shadow"
+		name: "Shadow",
+		options: {
+			shadow: "Shadow"
+		}
 	},
 	shape: {
 		name: "Shape",
-		options: shapes
+		options: {
+			shape: "Shape"
+		}
 	},
 	text: {
 		name: "Text",
-		subcategories: {
-			textColour: {
-				name: "Text colour",
-				options: colours
-			},
-			textSize: {
-				name: "Text size"
-			}
+		options: {
+			text: "Text",
+			textColour: "Text colour",
+			textSize: "Text size"
 		}
 	}
 };

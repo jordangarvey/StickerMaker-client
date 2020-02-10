@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
 import { NativeModules, StyleSheet, View } from "react-native";
 
 import ViewShot from "react-native-view-shot";
 
-import CategoriesContainer from "../Components/TemplatePicker/CategoriesContainer";
+import { useAppContext } from "../State/AppContext";
+
+import OptionButtonsContainer from "../Components/TemplatePicker/OptionButtonsContainer";
 import ExportsButton from "../Components/Controls/ExportsButton";
 import Header from "../Components/Layout/Header";
 import OptionsContainer from "../Components/TemplatePicker/OptionsContainer";
@@ -13,70 +15,54 @@ import * as C from "../Global/Colours";
 
 
 /**
- * Interface for the Template Picker screen state
- */
-interface ITemplatePickerState {
-	/** Optional error that’s thrown from the component */
-	error?: Error;
-}
-
-/**
  * Component to render the Template Picker screen
  */
-class TemplatePicker extends Component<any, ITemplatePickerState> {
-	public constructor(props: any) {
-		super(props);
+function TemplatePicker() {
+	const [{ currentCategory }] = useAppContext();
 
-		// Intitialise the state
-		this.state = {};
+	const templateItem = useRef<any>(null);
 
-		// Bind this component’s methods
-		this.capture = this.capture.bind(this);
-	}
-
-	private async capture() {
+	async function capture() {
 		let addBase64Image: string;
 		try {
-			addBase64Image = await this.refs.templateItem.capture();
+			addBase64Image = await templateItem.current!.capture();
 		} catch(error) {
+			// TODO: better error handling
 			console.error(error);
-			this.setState({ error });
 			return;
 		}
 
 		NativeModules.BetterClipboard.addBase64Image(addBase64Image);
 	}
 
-	public render() {
-		return (
-			<View style={styles.fullWidthBackground}>
-				<Header/>
+	return (
+		<View style={styles.fullWidthBackground}>
+			<Header height={1}/>
 
-				<View style={styles.templateItemContainer}>
-					<ViewShot ref="templateItem" options={{ result: "base64" }}>
-						<TemplateItem/>
-					</ViewShot>
-				</View>
+			<View style={styles.templateItemContainer}>
+				<ViewShot ref={templateItem} options={{ result: "base64" }}>
+					<TemplateItem/>
+				</ViewShot>
+			</View>
 
-				<View style={styles.bottomContainer}>
-					<CategoriesContainer/>
+			<View style={styles.bottomContainer}>
+				{currentCategory && <OptionButtonsContainer/>}
 
-					<View style={styles.bottomSolidContainer}>
-						<OptionsContainer/>
-						<ExportsButton onCopy={this.capture}/>
-					</View>
+				<View style={styles.bottomSolidContainer}>
+					<OptionsContainer/>
+
+					<ExportsButton onCopy={capture}/>
 				</View>
 			</View>
-		);
-	}
+		</View>
+	);
 }
 
 const styles = StyleSheet.create({
 	bottomContainer: {
-		bottom: 0,
+		flex: 4,
 		flexDirection: "column",
-		justifyContent: "space-between",
-		position: "absolute",
+		justifyContent: "flex-end",
 		width: "100%"
 	},
 	bottomSolidContainer: {
@@ -86,14 +72,14 @@ const styles = StyleSheet.create({
 	},
 	fullWidthBackground: {
 		...StyleSheet.absoluteFillObject,
-		backgroundColor: C.background
+		backgroundColor: C.background,
+		flexDirection: "column"
 	},
 	templateItemContainer: {
 		alignItems: "center",
 		alignSelf: "center",
-		bottom: 295,
+		flex: 5,
 		justifyContent: "center",
-		top: 100
 	}
 });
 

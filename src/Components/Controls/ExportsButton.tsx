@@ -41,16 +41,17 @@ const styles = StyleSheet.create({
 		borderBottomRightRadius: 30,
 		borderTopLeftRadius: 6,
 		borderTopRightRadius: 6,
-		bottom: 20,
 		flexDirection: "row",
 		height: 70,
 		justifyContent: "center",
-		marginTop: 40,
 		padding: 5,
 		width: "100%"
 	},
 	exportsButtonContainer: {
-		paddingHorizontal: 15
+		paddingBottom: 30,
+		paddingTop: 10,
+		paddingHorizontal: 15,
+		width: "100%"
 	}
 });
 
