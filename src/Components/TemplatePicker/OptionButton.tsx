@@ -46,11 +46,31 @@ const OptionButton: FC<IOptionButtonProps> = (props) => {
 			break;
 
 			case "outlineSize":
-				icon = "palette";
+				icon = "border-style";
+			break;
+
+			case "shadow":
+				icon = "brightness-4";
+			break;
+
+			case "shape":
+				icon = "crop-square";
+			break;
+
+			case "text":
+				icon = "short-text";
+			break;
+
+			case "textColour":
+				icon = "text-format";
+			break;
+
+			case "textSize":
+				icon = "format-size";
 			break;
 
 			default:
-				icon = "palette";
+				icon = "not-interested";
 		}
 	}
 
