@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet, View } from "react-native";
 
 import { Slider } from "react-native-elements";
 
@@ -24,13 +25,25 @@ function SizePicker(props: ISizePickerProps) {
 	}
 
 	return (
-		<Slider
-			onValueChange={onChange}
-			maximumValue={props.maxiumumValue}
-			minimumValue={props.minimumValue}
-			value={values[props.value]}
-		/>
+		<View style={styles.sizePicker}>
+			<Slider
+				onValueChange={onChange}
+				maximumValue={props.maxiumumValue}
+				minimumValue={props.minimumValue}
+				value={values[props.value]}
+			/>
+		</View>
 	);
 }
+
+const styles = StyleSheet.create({
+	sizePicker: {
+		justifyContent: "center",
+		height: "100%",
+		paddingHorizontal: 15,
+		paddingTop: 10,
+		width: "100%"
+	}
+});
 
 export default SizePicker;
