@@ -3,9 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 import { useAppContext } from "../../../State/AppContext";
 
-import ColourPicker from "./ColourPicker";
 import Input from "../../Controls/Input";
-import SizePicker from "./SizePicker";
 
 
 /**
@@ -29,9 +27,6 @@ function TextPicker() {
 				value={values.text || ""}
 				width="100%"
 			/>
-
-			<ColourPicker value="textColour"/>
-			<SizePicker maxiumumValue={30} minimumValue={10} value="textSize"/>
 		</View>
 	);
 }

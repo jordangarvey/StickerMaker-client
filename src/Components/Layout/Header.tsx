@@ -4,7 +4,11 @@ import { StyleSheet, View} from "react-native";
 import * as C from "../../Global/Colours";
 
 
-const Header: FC = () => <View style={styles.header}/>;
+interface IHeaderProps {
+	height: number;
+}
+
+const Header: FC<IHeaderProps> = (props) => <View style={[{ flex: props.height }, styles.header]}/>;
 
 const styles = StyleSheet.create({
 	header: {

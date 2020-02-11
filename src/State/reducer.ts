@@ -3,7 +3,7 @@ import IAppContext from "./IAppContext";
 
 export interface IAction {
 	payload: any;
-	type: "updateCategory" | "updateValues";
+	type: "updateCategory" | "updateOption" | "updateValues";
 }
 
 const reducer = (state: IAppContext, action: IAction) => {
@@ -12,6 +12,12 @@ const reducer = (state: IAppContext, action: IAction) => {
 			return {
 				...state,
 				currentCategory: action.payload
+			};
+
+		case "updateOption":
+			return {
+				...state,
+				currentOption: action.payload
 			};
 
 		case "updateValues":

@@ -6,9 +6,9 @@ import categories from "../../Data/categories";
 import CategoryButton from "./CategoryButton";
 
 
-const CategoriesContainer: FC = () => (
+const CategoriesButtonsContainer: FC = () => (
 	<View style={styles.categoriesContainer}>
-		<ScrollView horizontal={true}>
+		<ScrollView contentContainerStyle={styles.categoriesScroller} horizontal={true}>
 			{
 				Object.keys(categories).map(category => (
 					<CategoryButton
@@ -22,13 +22,17 @@ const CategoriesContainer: FC = () => (
 );
 
 /**
- * Styles for the Categories Container
+ * Styles for the Categories Buttons Container
  */
 const styles = StyleSheet.create({
 	categoriesContainer: {
-		marginBottom: 20,
+		height: "100%",
 		width: "100%"
+	},
+	categoriesScroller: {
+		flexDirection: "column",
+		flexWrap: "wrap",
 	}
 });
 
-export default CategoriesContainer;
+export default CategoriesButtonsContainer;

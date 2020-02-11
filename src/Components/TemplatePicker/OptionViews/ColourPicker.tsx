@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 import colours from "../../../Data/colours";
 
@@ -15,25 +15,29 @@ interface IColourPickerProps {
  * Component to render the Colour Picker
  */
 const ColourPicker: FC<IColourPickerProps> = (props) => (
-	<ScrollView contentContainerStyle={styles.colourPicker} horizontal={true}>
-		{
-			Object.keys(colours).map(colour => (
-				<Colour
-					colour={colour}
-					key={colour}
-					value={props.value}
-				/>
-			))
-		}
-	</ScrollView>
+	<View style={styles.colourPickerContainer}>
+		<ScrollView contentContainerStyle={styles.colourPicker} horizontal={true}>
+			{
+				Object.keys(colours).map(colour => (
+					<Colour
+						colour={colour}
+						key={colour}
+						value={props.value}
+					/>
+				))
+			}
+		</ScrollView>
+	</View>
 );
 
 const styles = StyleSheet.create({
 	colourPicker: {
-		height: "100%",
 		flexDirection: "column",
 		flexWrap: "wrap",
-		justifyContent: "space-evenly"
+		justifyContent: "flex-start"
+	},
+	colourPickerContainer: {
+		height: "100%"
 	}
 });
 
