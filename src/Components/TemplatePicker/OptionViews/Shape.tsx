@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
 import colours from "../../../Data/colours";
-import shapes from "../../../Data/shapes";
 import { useAppContext } from "../../../State/AppContext";
 
 

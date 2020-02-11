@@ -4,9 +4,9 @@ import Colours from "../../Data/colours";
 
 interface ISelectedOptions {
 	/** The current colour of the item */
-	colour: Colours;
+	colour: string;
 	/** The current shape of the item */
-	shape: Shapes;
+	shape: string;
 	/** The current text of the item */
 	text: string;
 }
