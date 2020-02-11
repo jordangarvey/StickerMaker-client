@@ -12,9 +12,9 @@ function OptionButtonsContainer() {
 
 	return currentCategory
 	? (
-		<View style={styles.categoriesContainer}>
+		<View style={styles.optionsContainer}>
 			{
-				<ScrollView contentContainerStyle={styles.categoriesScroller} horizontal={true}>
+				<ScrollView contentContainerStyle={styles.optionsScroller} horizontal={true}>
 					<OptionButton/>
 					{
 						Object.keys(categories[currentCategory].options).map(option => (
@@ -36,13 +36,14 @@ function OptionButtonsContainer() {
  * Styles for the Option Buttons Container
  */
 const styles = StyleSheet.create({
-	categoriesContainer: {
+	optionsContainer: {
+		paddingBottom: 20,
 		width: "100%"
 	},
-	categoriesScroller: {
+	optionsScroller: {
 		flexDirection: "row",
 		flexWrap: "wrap",
-		justifyContent: "space-evenly",
+		justifyContent: "flex-start",
 	}
 });
 

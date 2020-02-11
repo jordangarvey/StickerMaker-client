@@ -62,6 +62,7 @@ function OptionsContainer() {
 
 const styles = StyleSheet.create({
 	optionsContainer: {
+		height: 160,
 		width: "100%"
 	}
 });

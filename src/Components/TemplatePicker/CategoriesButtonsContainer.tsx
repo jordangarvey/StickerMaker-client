@@ -26,12 +26,12 @@ const CategoriesButtonsContainer: FC = () => (
  */
 const styles = StyleSheet.create({
 	categoriesContainer: {
+		height: "100%",
 		width: "100%"
 	},
 	categoriesScroller: {
-		flexDirection: "row",
+		flexDirection: "column",
 		flexWrap: "wrap",
-		justifyContent: "space-evenly",
 	}
 });
 

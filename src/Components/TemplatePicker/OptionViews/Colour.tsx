@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 	colour: {
 		borderRadius: size / 2,
 		height: size,
-		marginHorizontal: 15,
+		margin: 8,
 		width: size
 	},
 	selected: {
