@@ -39,6 +39,7 @@ const categories: ICategories = {
 		options: {
 			text: "Text",
 			textColour: "Text colour",
+			textPlacement: "Text placement",
 			textSize: "Text size"
 		}
 	}

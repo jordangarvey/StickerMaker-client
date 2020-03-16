@@ -65,6 +65,10 @@ const OptionButton: FC<IOptionButtonProps> = (props) => {
 				icon = "text-format";
 			break;
 
+			case "textPlacement":
+				icon = "format-shapes";
+			break;
+
 			case "textSize":
 				icon = "format-size";
 			break;

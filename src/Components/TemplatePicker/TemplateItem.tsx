@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Animated, PanResponder, StyleSheet, Text, View } from "react-native";
 
 import colours from "../../Data/colours";
 import { useAppContext } from "../../State/AppContext";
@@ -9,7 +9,22 @@ import { useAppContext } from "../../State/AppContext";
  * Component to render a Template Item
  */
 function TemplateItem() {
-	const [{ values }] = useAppContext();
+	const [{ currentOption, values }] = useAppContext();
+
+	const [pan, setPan] = useState(new Animated.ValueXY());
+
+		let val = { x:0, y:0 };
+		pan.addListener((value) => val = value);
+		// Initialize PanResponder with move handling
+		const panResponder = PanResponder.create({
+			onStartShouldSetPanResponder: (e, gesture) => true,
+			onPanResponderMove: Animated.event([
+				null, { dx: pan.x, dy: pan.y }
+			])
+			// adjusting delta value
+		});
+
+		pan.setValue({ x:0, y:0})
 
 	let shape: object;
 
@@ -27,6 +42,10 @@ function TemplateItem() {
 			throw new Error("Unknown shape");
 	}
 
+	const panStyle = {
+		transform: pan.getTranslateTransform()
+	}
+
 	return (
 		<View
 			style={[
@@ -42,7 +61,21 @@ function TemplateItem() {
 				shape
 			]}
 		>
-			<Text style={[styles.text, { color: colours[values.textColour], fontSize: values.textSize }]}>{values.text}</Text>
+
+			<Animated.Text
+				{...panResponder.panHandlers}
+				style={[
+					panStyle,
+					styles.text,
+					{
+						color: colours[values.textColour],
+						fontSize: values.textSize
+					},
+					(currentOption === "textPlacement" && values.text?.length) ? styles.textDraggable : undefined
+				]}
+			>
+				{values.text}
+			</Animated.Text>
 		</View>
 	);
 }
@@ -69,6 +102,12 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		color: "white"
+	},
+	textDraggable: {
+		borderColor: "red",
+		borderStyle: "dashed",
+		borderWidth: 1,
+		padding: 10
 	}
 });
 

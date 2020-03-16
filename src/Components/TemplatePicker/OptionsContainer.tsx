@@ -8,6 +8,7 @@ import ColourPicker from "./OptionViews/ColourPicker";
 import ShapePicker from "./OptionViews/ShapePicker";
 import SizePicker from "./OptionViews/SizePicker";
 import TextPicker from "./OptionViews/TextPicker";
+import TextPlacementPicker from "./OptionViews/TextPlacementPicker";
 
 
 /**
@@ -28,7 +29,7 @@ function OptionsContainer() {
 		break;
 
 		case "outlineSize":
-			optionsPicker = <SizePicker maxiumumValue={30} minimumValue={10} value={currentOption}/>
+			optionsPicker = <SizePicker maxiumumValue={30} minimumValue={0} value={currentOption}/>
 		break;
 
 		case "shadow":
@@ -45,6 +46,10 @@ function OptionsContainer() {
 
 		case "textColour":
 			optionsPicker = <ColourPicker value={currentOption}/>;
+		break;
+
+		case "textPlacement":
+			optionsPicker = <TextPlacementPicker/>
 		break;
 
 		case "textSize":
